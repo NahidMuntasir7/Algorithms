@@ -14,8 +14,7 @@ void solve(){
             cnt++;
         }
         if(p != i) sod *= (p - 1) / (i - 1);
-        cnt = cnt + 1;
-        nod *= cnt;
+        if(cnt) ans *= (cnt + 1);
     }
     if(temp > 1){
             sod *= (temp * temp - 1) / (temp - 1);
