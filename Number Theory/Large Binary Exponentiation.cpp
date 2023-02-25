@@ -47,3 +47,39 @@ int main(){
 }
 
 
+
+// optimized
+
+/*
+
+const int M = 10000019;
+
+long long BinMultiply(long long a, long long b){
+    long long ans = 0LL;
+    a = a % M;
+    while(b > 0){
+        if(b & 1){
+            ans = (ans + a) % M;
+        }
+        a = (a + a) % M;
+        b >>= 1;
+    }
+        return ans;
+}
+
+long long BinExp(long long a, long long b){
+    long long ans = 1LL;
+    a = a % M;
+    while(b > 0){
+        if(b & 1){
+        ans = BinMultiply(ans, a);
+        }
+        a = BinMultiply(a, a);
+        b >>= 1;
+    }
+        return ans;
+}
+
+*/
+
+
