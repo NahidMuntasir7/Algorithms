@@ -33,7 +33,7 @@ void prec() {
         ipw[i].second = 1LL * ipw[i - 1].second * ip2 % MOD2;
     }
 }
-struct Hashing {    // 1 index based
+struct Hashing {                         // 1 index based
     int n;
     string s;
     vector<pair<int, int>> hs;
@@ -85,9 +85,9 @@ int main() {
     
     Hashing ha(sa), hb(sb);
 
-    int l = 1, r = n; // 1 based bhai
+    int l = 1, r = n;      // 1 index based bhai
 
-    pair<int, int> ans = {0, -1};
+    pair<int, int> ans = {0, -1};  // {0, 0} is also ok...
     while(l <= r){
         int mid = (l + r) / 2;
         int ok = lcs(ha, hb, mid);
