@@ -44,7 +44,7 @@ int main(){
     }
 
     for(int i = 1; i <= n; i++){
-        if(dist[i] < inf) cout << dist[i] << " ";
-        else cout << -1 << " "; 
+        if(dist[i] < inf) cout << dist[i] << " "; 
+        else cout << -1 << " "; // not accessed from source at all
     }
 }
