@@ -1,3 +1,4 @@
+// https://codeforces.com/contest/1907/problem/D
 #include<bits/stdc++.h>
 using namespace std;
     
@@ -12,8 +13,8 @@ vector<int> l, r;
             for(int i = 0; i < l.size(); i++) {
                 x += k;
                 y -= k;
-                x = min(x, r[i]);
-                y = max(y, l[i]);
+                x = min(x, r[i]);   // ekta line e k poriman length add korle
+                y = max(y, l[i]);   // taa next line er sathe overlap kore ki na...
                 if(y > x) return false;
             }
             return true;
