@@ -21,15 +21,15 @@ int main(){
         cin >> arr[i];
     }
     
-    int lo = 0, hi = n - 1, ans1;
+    int lo = 0, hi = n - 1, ans;
     while(lo <= hi){
 
         int mid = (lo + hi) / 2;        // 0 0 0 0 0 (1) 1 1 1 [ans = 5] first 1
         if(func(arr, mid)){
-            ans1 = hi;
+            ans = hi;
             hi = mid - 1;
         }
         else lo = mid + 1;
     }
-    cout << ans1 << endl;
+    cout << ans << endl;
 }
