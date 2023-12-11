@@ -3,7 +3,7 @@ using namespace std;
     
 #define ll long long
 #define endl '\n'
-const int inf = 1e9 + 7;
+const int inf = 1e8 + 7;
     
 int main(){
     
@@ -24,15 +24,25 @@ int main(){
     dist[src] = 0;
 
     for(int iter = 0; iter < n - 1; iter++){
-        bool change = 0;   // to detect negative cycle 
         for(auto e : edges){
             int u = e[0];
             int v = e[1];
             int w = e[2];
-            if(dist[u] + w < dist[v]) change = 1;
-
-            dist[v] = min(dist[v], w + dist[u]);  
+            if(dist[u] != 1e8 and dist[u] + w < dist[v]){
+                dist[v] = dist[u] + w;
+            }
         }
+    }
+    
+    // n th iteration 
+    int change = 0;   
+    for(auto e : edges){
+        int u = e[0];
+        int v = e[1];
+        int w = e[2];
+        if(dist[u] != 1e8 and dist[u] + w < dist[v]){
+            change = 1;
+        } 
     }
 
     // if(change) cout << "Cycle detected" << endl;
