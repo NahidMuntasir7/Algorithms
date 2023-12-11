@@ -3,7 +3,7 @@ using namespace std;
     
 #define ll long long
 #define endl '\n'
-const int inf = 1e8 + 7;
+const int inf = 1e8;
     
 int main(){
     
@@ -22,7 +22,7 @@ int main(){
 
     vector<int> dist(n, inf);
     dist[src] = 0;
-
+    // n - 1 iteartions
     for(int iter = 0; iter < n - 1; iter++){
         for(auto e : edges){
             int u = e[0];
@@ -33,7 +33,6 @@ int main(){
             }
         }
     }
-    
     // n th iteration 
     int change = 0;   
     for(auto e : edges){
