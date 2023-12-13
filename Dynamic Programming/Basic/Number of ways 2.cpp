@@ -1,4 +1,4 @@
-// Find the number of ways to write n as sums of positive integers(** with repetition **). Output the answer modulo 1e9 + 7
+// Find the number of ways to write n as sums of positive integers(with repetition). Output the answer modulo 1e9 + 7
 
 #include<bits/stdc++.h>
 using namespace std;
