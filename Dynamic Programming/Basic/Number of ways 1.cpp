@@ -1,4 +1,4 @@
-//  the number of ways to write n as sums of 1 and 3
+//  the number of ways to write n as sums of 1 and (with repetition)
 #include<bits/stdc++.h>
 using namespace std;
 
