@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/target-sum/solutions/3218461/most-easiest-way-c/
-
+// number of ways to make a sum by including and excluding
 class Solution {
 public:
     int solve(vector<int> &nums, int target, int ans, int index){
