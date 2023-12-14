@@ -6,11 +6,11 @@ using namespace std;
 const int N = 1e3 + 9, mod = 1e9 + 7;
 int ways[N];
 int count(int n) {
-  if (n == 0) return 1;
-  if (ways[n] != -1) return ways[n];
+  if (n == 0) return 1; // add another //if(n < 0) return 0; 
+  if (ways[n] != -1) return ways[n];   // if i do not use for loop if
   int ans = 0;
   for (int i = 1; i <= n; i++) {
-    ans += count(n - i);
+    ans += count(n - i);  // sometimes if logic needed...
     ans %= mod;
   }
   return ways[n] = ans;
