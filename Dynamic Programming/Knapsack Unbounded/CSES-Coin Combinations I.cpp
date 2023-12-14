@@ -1,4 +1,13 @@
 // just like Dice Combination with an array
+// if the coins are {2,3,5} and the desired sum is 9, there are 8 ways:
+// 2+2+5
+// 2+5+2    // Order does not matter
+// 5+2+2
+// 3+3+3
+// 2+2+2+3
+// 2+2+3+2
+// 2+3+2+2
+// 3+2+2+2
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
