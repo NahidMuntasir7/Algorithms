@@ -1,3 +1,6 @@
+// Given a rod of length n and a list of rod prices of length i, where 1 <= i <= n, 
+// find the optimal way to cut the rod into smaller rods to maximize profit.
+
 #include<bits/stdc++.h>
 using namespace std;
 
