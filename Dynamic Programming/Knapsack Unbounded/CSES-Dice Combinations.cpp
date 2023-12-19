@@ -29,3 +29,37 @@ int main(){
     int n; cin >> n;
     cout << count(n) << endl;
 }
+
+// iterative
+#include<bits/stdc++.h>
+using namespace std;
+    
+#define ll long long
+#define endl '\n'
+const int MOD = 1e9 + 7;
+    
+int main(){
+    
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    
+    int n;
+    cin >> n;
+    vector<int> dp(n + 1);
+    // state
+    // dp[i] = number of ways to make a sum of i
+    
+    // base case
+    dp[0] = 1;
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= 6; j++){
+            if(j <= i){
+                // transition
+                dp[i] = (dp[i] + dp[i - j]) % MOD;
+            }
+        }
+    }
+    
+    //final subproblem
+    cout << dp[n] << endl;
+}
