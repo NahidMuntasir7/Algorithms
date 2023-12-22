@@ -14,7 +14,7 @@ int main(){
         cin >> val[i];
     }
     vector<vector<int>> dp(n + 1, vector<int>(x + 1, 0)); // inner vectors are initialized with 0 to x + 1 size
-    
+                                                          // base case also declared here ^
     for(int i = 1; i <= n; i++){                          // row -> n , column -> x
         for(int j = x; j >= 0; j--){
             // compute dp[i][j] here
