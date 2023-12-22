@@ -48,3 +48,38 @@ int main(){
     }
     cout << func(x) << endl;    
 }
+
+
+
+// iterative
+#include<bits/stdc++.h>
+using namespace std;
+const int mod = 1e9 + 7;
+ 
+int main(){
+    int n, x;
+    cin >> n >> x;
+    vector<int> a(n);
+    for(int i = 0; i < n; i++){
+        cin >> a[i];
+    }
+    
+    vector<int> dp(x + 1, 0); 
+
+    dp[0] = 1; // base
+    
+    // dp[x] -> dp[x - ci]
+    for(int i = 1; i <= x; i++){ // O(x)
+        // find dp[x]
+        for(int j = 0; j < n; j++){ // O(n)
+            if(a[j] <= i){
+                // transition
+                dp[i] = (dp[i] + dp[i - a[j]]) % mod;
+            }
+        }
+    }
+    //final subproblem
+    cout << dp[x] << endl;
+    return 0;
+}
+
