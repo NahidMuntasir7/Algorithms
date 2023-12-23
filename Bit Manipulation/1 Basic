@@ -1,0 +1,8 @@
+& and
+| or
+^ xor
+
+a << n = a * 2 ^ n , 1 << n = 2 ^ n
+a >> n = a / 2 ^ n , 1 >> n = 1 / 2 ^ n
+
+~(5) = -6 -> flipping er por je ans ase ta 6 er 2's complement, so -6
