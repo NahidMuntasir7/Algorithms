@@ -9,10 +9,10 @@ int main(){
     
     int n; cin >> n;
     vector<ll> anss;
-    for(int k = 1; k <= 10; k++){
-        for(int mask = 0; mask < (1 << k); mask++){
+    for(int k = 1; k <= 10; k++){     // number's digit is increasing
+        for(int mask = 0; mask < (1 << k); mask++){ // creating masks (for each length all combination check) 
             ll ans = 0;
-            for(int i = 0; i < k; i++){
+            for(int i = 0; i < k; i++){  // for 1 mask constructing the digit
                 if(mask & (1 << i)){
                     ans *= 10;
                     ans += 7;
