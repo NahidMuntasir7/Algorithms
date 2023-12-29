@@ -14,7 +14,7 @@ int main(){
     for(int i = 0; i < n; i++){
         cin >> v[i].first >> v[i].second;
     }
-    sort(v.begin() ,v.end(), cmp);
+    sort(v.begin(), v.end(), cmp);
     int cnt = 1;
     int temp = v[0].second;
   
