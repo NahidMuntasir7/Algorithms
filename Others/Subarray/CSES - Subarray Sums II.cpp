@@ -1,4 +1,5 @@
-//Given an array of n integers, your task is to count the number of subarrays having sum x.
+//Given an array of n integers, your task is to count the number of subarrays having sum x. (negative included)
+
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
