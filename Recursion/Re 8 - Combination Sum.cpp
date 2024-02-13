@@ -7,6 +7,7 @@ class Solution{
         if(target == 0){
           ans.push_back(ds);
         }
+        return;
       }
       if(arr[i] <= target){ // to prevent negative value
         ds.push_back(arr[i]); // 1
