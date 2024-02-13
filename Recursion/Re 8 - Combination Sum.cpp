@@ -11,7 +11,7 @@ class Solution{
       }
       if(arr[i] <= target){ // to prevent negative value
         ds.push_back(arr[i]); // 1
-        findCombination(i, target - arr[i], arr, ans, ds);
+        findCombination(i, target - arr[i], arr, ans, ds); // not i + 1 .......
         ds.pop_back(); // 2
       }
       findCombination(i + 1, target, arr, ans, ds);
