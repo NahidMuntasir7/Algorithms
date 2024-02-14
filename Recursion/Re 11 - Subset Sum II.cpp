@@ -4,7 +4,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-void printAns(vector < vector < int >> & ans) {
+void printAns(vector<vector<int>> &ans) {
   cout << "The unique subsets are " << endl;
   cout << "[ ";
   for (int i = 0; i < ans.size(); i++) {
