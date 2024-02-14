@@ -25,7 +25,7 @@ class Solution {
 
 
 int main() {
-  vector < int > arr{3,1,2};
+  vector < int > arr{3, 1, 2};
   Solution ob;
   vector < int > ans = ob.subsetSums(arr, arr.size());
   sort(ans.begin(), ans.end());
@@ -34,6 +34,5 @@ int main() {
     cout << sum << " ";
   }
   cout << endl;
-
   return 0;
 }
