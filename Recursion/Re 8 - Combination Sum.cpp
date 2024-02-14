@@ -1,5 +1,10 @@
 // leetcode - Combination sum
 
+// Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. 
+// You may return the combinations in any order
+The same number may be chosen from candidates an unlimited number of times.
+// Two combinations are unique if the frequency of  at least one of the chosen numbers is different.
+
 class Solution{
   public:
     void findCombination(int i, int target, vector<int> &arr, vector<vector<int>> &ans, vector<int> &ds){
@@ -65,8 +70,7 @@ void PrintSubsetSum(int i, int n, int set[], int targetSum, vector<int>& subset)
 		subset.push_back(set[i]);
 
 		// Recursive call for consider current element
-		PrintSubsetSum(i + 1, n, set, targetSum - set[i],
-					subset);
+		PrintSubsetSum(i + 1, n, set, targetSum - set[i], subset);
 
 		// pop-back element after recursive call to restore
 		// subsets original configuration
@@ -95,6 +99,5 @@ int main(){
 	if (!flag) {
 		cout << "There is no such subset";
 	}
-
 	return 0;
 }
