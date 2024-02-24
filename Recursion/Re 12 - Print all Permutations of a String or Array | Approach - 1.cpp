@@ -9,7 +9,7 @@ class Solution {
         ans.push_back(ds);
         return;
       }
-      for (int i = 0; i < nums.size(); i++) {        // (extra  sapce) for frequency array
+      for (int i = 0; i < nums.size(); i++) {        // (extra sapce) for frequency array
         if (!freq[i]){   // not marked
           ds.push_back(nums[i]); // picking
           freq[i] = 1; // marked
