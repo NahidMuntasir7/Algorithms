@@ -9,17 +9,17 @@ int main(){
     for(int i=0;i<n;i++){
         cin >> arr[i];
     }
-    int i = 0, j = 0, cnt = 0;
+    int start = 0, end = 0, cnt = 0;
     long long sum = 0;
  
-    while(i < n){
-        sum += arr[i];
+    while(start < n){
+        sum += arr[start];
         while(sum >= x){
-           if(sum == x) cnt++;  // sliding window
-           sum -= arr[j];
-           j++;
+           if(sum == x) cnt++;
+           sum -= arr[end];
+           end++;
          }
-         i++;
+         start++;
       }
       cout << cnt << endl;
 }
