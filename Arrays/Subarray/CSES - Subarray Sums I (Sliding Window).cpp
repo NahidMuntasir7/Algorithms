@@ -6,7 +6,7 @@ int main(){
     int n, x;
     cin >> n >> x;
     int arr[n];
-    for(int i=0;i<n;i++){
+    for(int i = 0; i < n; i++){
         cin >> arr[i];
     }
     int start = 0, end = 0, cnt = 0;
@@ -15,7 +15,7 @@ int main(){
     while(start < n){
         sum += arr[start];
         while(sum >= x){
-           if(sum == x) cnt++;
+           if(sum == x) cnt++; // to do
            sum -= arr[end];
            end++;
          }
