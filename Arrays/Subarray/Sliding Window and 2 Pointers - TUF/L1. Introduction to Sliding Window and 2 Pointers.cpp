@@ -1,6 +1,7 @@
 // 1. Constant window
 // 2. longest subarray / substring where <condition>
-
+// 3. number of subarray / substring where <condition>
+// 4. shortest / minimum window where <condition>
 
 // 1. Constant window
 
