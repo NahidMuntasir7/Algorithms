@@ -1,7 +1,8 @@
 // Given an array of integers nums and an integer k. A continuous subarray is called nice if there are k odd numbers on it.
 // Return the number of nice sub-arrays.
 
-// 
+// ans = nos(odd <= k) - nos(odd <= k - 1)   | nos = number of subarrays..
+
 class Solution {
 public:
     int subArray(vector<int>& nums, int k) {
