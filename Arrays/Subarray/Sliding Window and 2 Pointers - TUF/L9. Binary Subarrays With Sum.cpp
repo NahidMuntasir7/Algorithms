@@ -38,9 +38,9 @@ public:
                 sum -= nums[j];
                 j++;
             }
-            count += i - j + 1; // 
-            i++;
-        }
+            count += i - j + 1; // suppose 2, 1, (5, 7, 3), 4, 7 here -> 5 7 3 is under the condition sum <= goal
+            i++;                // so total subarray possible under this condition is 5 7, 7 3, 5 7 3 = total 3 subarrays.. 
+        }                                                                    // formula = (i - j + 1) = (4 - 2 + 1) = 3...
         return count;
     }
 };
