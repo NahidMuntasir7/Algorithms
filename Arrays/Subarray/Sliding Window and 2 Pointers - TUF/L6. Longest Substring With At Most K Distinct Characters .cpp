@@ -12,7 +12,7 @@ public:
         for (int right = 0; right < n; right++) {
             mp[s[right]]++;
 
-            while (mp.size() > k) {       // O(n) optimization by putting if instead of while
+            while (mp.size() > k) {       // O(n) optimization by putting "if" instead of while
                 mp[s[left]]--;
                 if (mp[s[left]] == 0) {
                     mp.erase(s[left]);
