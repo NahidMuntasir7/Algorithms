@@ -13,8 +13,7 @@ public:
         int starti = 0;
         int i = 0, j = 0;
         int ans = INT_MAX;
-        for(auto c: t){
-            //increase freq of chars from t
+        for(auto c: t){ //increase freq of chars from t
             mp[c]++;
         }
 
@@ -29,7 +28,6 @@ public:
                     ans = win; // len
                     starti = i; // starting pos
                 }
-
                 //now check if we can shrink i
                 mp[s[i]]++;
                 if(mp[s[i]] > 0){
