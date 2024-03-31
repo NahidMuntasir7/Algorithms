@@ -1,4 +1,7 @@
+// number of subarrays
 // Given an array of n positive integers, your task is to count the number of subarrays having sum x. (positive)
+
+// *** positive numbers 1 to 10^9 *** no negative and zeroo ***
 
 #include<bits/stdc++.h>
 using namespace std;
