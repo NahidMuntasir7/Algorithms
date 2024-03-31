@@ -1,3 +1,5 @@
+// TYPE : Number of subarray having X equal to Y
+
 // Given a binary array nums and an integer goal, return the number of non-empty subarrays with a sum goal.
 // Count the number of subarrays sum equal to X
 
@@ -21,6 +23,8 @@ public:
 
 
 // *** Approach 2 ***
+
+// ans = nos(sum <= goal) - nos(sum <= goal - 1)  | nos = number of subarray
 
 class Solution {
 public:
