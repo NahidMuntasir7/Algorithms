@@ -1,4 +1,4 @@
-// TYPE : Number of subarray having X equal to Y
+// TYPE : Number of subarrays having X equal to Y = umber of subarray having sum equal to goal
 
 // Given a binary array nums and an integer goal, return the number of non-empty subarrays with a sum goal.
 // Count the number of subarrays sum equal to X
