@@ -1,5 +1,5 @@
 // LeetCode - Fruit Into Baskets
-// maximum length of subarray with at most 2 types of numbers
+// maximum length of subarray with at most 2 types of numbers (cnt <= 2)
 
 class Solution {
 public:
