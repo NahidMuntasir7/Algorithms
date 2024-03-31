@@ -1,2 +1,3 @@
 # Algorithms
-here i will be uploading topic based various algorithms throughout my problem solving journey...
+
+🚀 Throughout my problem-solving journey, I'll be sharing a variety of algorithms based on different topics here 🌟
