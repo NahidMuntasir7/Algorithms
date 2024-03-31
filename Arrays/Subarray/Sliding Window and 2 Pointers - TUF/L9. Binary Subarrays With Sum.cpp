@@ -1,5 +1,5 @@
 // Given a binary array nums and an integer goal, return the number of non-empty subarrays with a sum goal.
-// Count subarray sum equal to X
+// Count the number of subarrays sum equal to X
 
 // Approach 1
 class Solution {
@@ -21,6 +21,8 @@ public:
 
 
 // Approach 2
+
+
 
 
 
