@@ -25,7 +25,7 @@ public:
 class Solution {
 public:
     int numSubarraysWithSum(vector<int>& nums, int goal) {
-        return SUMARRAY(nums, goal) - SUMARRAY(nums, goal - 1);  // (sum <= goal) - (sum <= goal - 1)
+        return SUMARRAY(nums, goal) - SUMARRAY(nums, goal - 1);  // ans = (sum <= goal) - (sum <= goal - 1)
     }
     
     int SUMARRAY(vector<int>& nums, int goal) {
@@ -34,7 +34,7 @@ public:
         int count = 0, i = 0, j = 0, sum = 0;
         while (i < nums.size()) {
             sum += nums[i]; 
-            while (sum > goal) {
+            while (sum > goal) { // condition : sum <= goal
                 sum -= nums[j];
                 j++;
             }
