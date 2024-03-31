@@ -12,14 +12,14 @@ public:
         for (int right = 0; right < n; right++) {
             mp[s[right]]++;
 
-            while (mp.size() > k) {
+            while (mp.size() > k) {       // O(n) optimization by putting if instead of while
                 mp[s[left]]--;
                 if (mp[s[left]] == 0) {
                     mp.erase(s[left]);
                 }
                 left++;
             }
-            mx = max(mx, right - left + 1);
+            mx = max(mx, right - left + 1); // if(mp.size() <= k) mx = max(mx, right - left + 1);
         }
         return mx;
     }
