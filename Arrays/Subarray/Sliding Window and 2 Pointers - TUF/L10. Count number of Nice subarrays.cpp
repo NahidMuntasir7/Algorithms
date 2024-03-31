@@ -1,4 +1,4 @@
-// TYPE : Number of subarray having X equal to Y = number of subarrays having odd numbers equal to k
+// TYPE : Number of subarrays having X equal to Y = number of subarrays having odd numbers equal to k
 
 // Given an array of integers nums and an integer k. A continuous subarray is called nice if there are k odd numbers on it.
 // Return the number of nice sub-arrays.
