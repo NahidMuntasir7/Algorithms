@@ -38,7 +38,7 @@ public:
                 sum -= nums[j];
                 j++;
             }
-            count += i - j + 1;
+            count += i - j + 1; // 
             i++;
         }
         return count;
