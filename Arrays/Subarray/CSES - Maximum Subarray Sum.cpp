@@ -25,3 +25,15 @@ int main(){
     }
     cout << best << endl;
 }
+
+
+
+// Kadane's Algorithm
+    ll maxi = INT_MIN, sum = 0;
+ 
+    for(ll i = 0; i < n; i++){
+        sum = sum + arr[i];   
+        maxi = max(maxi, sum);  
+        if(sum < 0) sum = 0;
+    }
+
