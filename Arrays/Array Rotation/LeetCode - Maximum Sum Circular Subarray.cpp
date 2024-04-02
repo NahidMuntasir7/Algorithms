@@ -21,7 +21,7 @@ public:
         int maxi2 = totalsum - maxofmini * (-1); // total - minimum => circular
         
         if(maxi2 == 0) return maxi1; // empty subarray... when all negative (totalsum - maxofmini == 0)
-        return max(maxi1, maxi2);
-        
+        return max(maxi1, maxi2);                                        // -3 -5 -1 here, total sum = -9, max of mini = -9 so, ans = 0; no subarray will be taken  
+                                                                                                                                      // but ans will be -1
     }
 };
