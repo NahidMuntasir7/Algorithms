@@ -20,7 +20,7 @@ public:
         } 
         int maxi2 = totalsum - maxofmini * (-1); // total - minimum => circular
         
-        if(maxi2 == 0) return maxi1; // empty subarray... when all negative
+        if(maxi2 == 0) return maxi1; // empty subarray... when all negative (totalsum - maxofmini == 0)
         return max(maxi1, maxi2);
         
     }
