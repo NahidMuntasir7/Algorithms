@@ -5,4 +5,16 @@
 // let n = 19 so, lower bound = 19(1st occurence)
 // let n = 20..  lower bound = last index + 1 / size of the array
 
-// 
+
+// implementing lower bound
+
+while (low <= high) {
+    int mid = low + (high - low) / 2;
+    
+    if(arr[mid] >= n){
+        ans = mid;
+        high = mid - 1;
+    }
+    else low = mid + 1;
+}
+
