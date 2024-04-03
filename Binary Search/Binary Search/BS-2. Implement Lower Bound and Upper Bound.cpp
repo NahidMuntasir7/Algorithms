@@ -21,8 +21,12 @@ while (low <= high) {
     else low = mid + 1;
 }
 
-// STL for lower bound
+// STL for upper bound
 int lb = lower_bound(v.begin(), v.end(), n) - v.begin(); // minus for index
+
+
+
+// LeetCode - Search Insert Position
 
 
 
@@ -37,4 +41,24 @@ int lb = lower_bound(v.begin(), v.end(), n) - v.begin(); // minus for index
 
 // STL for lower bound
 int lb = upper_bound(v.begin(), v.end(), n) - v.begin();
+
+
+
+
+// LeetCode - Search Insert Position
+// can be implemented using lower bound
+
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        int lo = 0, hi = nums.size() - 1;
+        while(lo <= hi){
+            int mid = (lo + hi) / 2;
+            if(nums[mid] == target) return mid;
+            else if(nums[mid] < target) lo = mid + 1;
+            else hi = mid - 1;
+        } 
+        return hi + 1;  // when not present in the array... high < low 
+    }
+};
 
