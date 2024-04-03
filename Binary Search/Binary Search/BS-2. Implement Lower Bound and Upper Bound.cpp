@@ -12,7 +12,7 @@ while (low <= high) {
     int mid = low + (high - low) / 2;
     
     if(arr[mid] >= n){
-        ans = mid;
+        ans = mid; // last high before the loop breaks... after this low > high
         high = mid - 1;
     }
     else low = mid + 1;
