@@ -25,6 +25,7 @@ while (low <= high) {
 int lb = lower_bound(v.begin(), v.end(), n) - v.begin(); // minus for index
 
 
+
 //upper bound
 // smallest index such that arr[i] > n
 
@@ -34,5 +35,6 @@ int lb = lower_bound(v.begin(), v.end(), n) - v.begin(); // minus for index
     }
     else low = mid + 1;
 
-
+// STL for lower bound
+int lb = upper_bound(v.begin(), v.end(), n) - v.begin();
 
