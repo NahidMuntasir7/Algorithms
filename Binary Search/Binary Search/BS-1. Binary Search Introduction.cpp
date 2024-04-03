@@ -13,4 +13,4 @@ while (low <= high) {
     if (array[mid] == x) return mid;
     else if (array[mid] < x) low = mid + 1;
     else high = mid - 1;
-  
+}
