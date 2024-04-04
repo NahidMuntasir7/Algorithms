@@ -49,7 +49,6 @@ while(low <= high){
     else hi = mid - 1;
 }
 // if last == -1 then not present
-
 // if no first occurence then no last occurence
 
 
