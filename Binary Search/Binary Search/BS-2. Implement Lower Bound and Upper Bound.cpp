@@ -62,3 +62,33 @@ public:
     }
 };
 
+
+
+// floor and ceil in an array
+
+// floor largest number in the array <= x
+// ceil  smallest  no  in the  array >= x
+
+
+// floor implementation
+int lo = 0, hi = nums.size() - 1, floor;
+    while(lo <= hi){
+            int mid = (lo + hi) / 2;
+            if(nums[mid] <= target){ 
+                floor = nums[mid];  
+                lo = mid + 1; // ----->
+            }
+            else hi = mid - 1;
+        } 
+
+
+// ceil implementation
+int lo = 0, hi = nums.size() - 1, ceil;
+    while(lo <= hi){
+            int mid = (lo + hi) / 2;
+            if(nums[mid] >= target){ 
+                ceil = nums[mid];  
+                hi = mid - 1; // <-----
+            }
+            else lo = mid + 1;
+        } 
