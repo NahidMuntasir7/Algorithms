@@ -54,4 +54,5 @@ while(low <= high){
 
 // sorted array given check a elements occurence
 
-int ans = lastocc - firstocc + 1
+if(first == -1) return 0; 
+else ans = lastocc - firstocc + 1;
