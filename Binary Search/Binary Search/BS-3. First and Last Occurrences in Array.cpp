@@ -51,3 +51,8 @@ while(low <= high){
 // if last == -1 then not present
 
 // if no first occurence then no last occurence
+
+
+// sorted array given check a elements occurence
+
+int ans = lastocc - firstocc + 1
