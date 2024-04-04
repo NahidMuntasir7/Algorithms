@@ -24,7 +24,7 @@
 // code: normal binary search
 // first occ
 int low = 0, high = n - 1;
-first = -1;
+int first = -1;
 while(low <= high){
     int mid = (low + high) / 2;
     if(arr[mid] == n){
@@ -38,7 +38,7 @@ while(low <= high){
 
 // last occ
 int low = 0, high = n - 1;
-last = -1;
+int last = -1;
 while(low <= high){
     int mid = (low + high) / 2;
     if(arr[mid] == n){
