@@ -1,5 +1,6 @@
 // first and last occurance of a given number
 
+
 // first occurence = lower bound
 // last  occurence = upper bound - 1
 
@@ -19,9 +20,33 @@
    }
 
 
-// code
+
+// code: normal binary search
+// first occ
 int low = 0, high = n - 1;
 first = -1;
 while(low <= high){
-  
+    int mid = (low + high) / 2;
+    if(arr[mid] == n){
+      first = mid;
+      high = mid - 1; // <----
+    }
+    else if(arr[mid] < n) low = mid + 1;
+    else hi = mid - 1;
 }
+// if first == -1 then not present
+
+// last occ
+int low = 0, high = n - 1;
+last = -1;
+while(low <= high){
+    int mid = (low + high) / 2;
+    if(arr[mid] == n){
+      last = mid;
+      lo = mid + 1; // ---->
+    }
+    else if(arr[mid] < n) low = mid + 1;
+    else hi = mid - 1;
+}
+
+// if last == -1 then not present
