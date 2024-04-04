@@ -19,3 +19,9 @@
    }
 
 
+// code
+int low = 0, high = n - 1;
+first = -1;
+while(low <= high){
+  
+}
