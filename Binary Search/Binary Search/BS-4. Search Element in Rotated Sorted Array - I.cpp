@@ -1,4 +1,4 @@
-// rotated sorted array 
+// rotated sorted array (unique) 
 // [1, 2, 3, 4, 5] -> [4, 5, 1, 2, 3]
 
 // the array will be having ** unique eliments **
