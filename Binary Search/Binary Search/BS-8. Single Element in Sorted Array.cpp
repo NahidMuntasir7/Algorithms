@@ -3,7 +3,8 @@
 // only 1 number will appear once... and all other number will be twice
 // findout that number
 
-
+// [1, 1, 2, 2, 3, 3, (4), 5, 5, 6, 6]
+//  0  1  2  3  4  5   6   7  8  9  10
 int singleNonDuplicate(vector<int>& arr) {
     int n = arr.size(); 
 
