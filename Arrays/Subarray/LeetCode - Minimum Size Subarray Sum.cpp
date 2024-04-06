@@ -8,7 +8,7 @@ public:
         while(start < n){
             sum += nums[start];
             while(sum >= target){
-                len = min(len, start - end + 1);
+                len = min(len, start - end + 1); // must be here
                 sum -= nums[end];
                 end++;
             }
