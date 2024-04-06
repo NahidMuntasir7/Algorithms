@@ -18,7 +18,7 @@ int NthRoot(int n, int m) {
     int low = 1, high = m;
     while (low <= high) {
         int mid = (low + high) / 2;
-        int midN = func(mid, n, m); // use Binary search on the answer space
+        int midN = func(mid, n, m); // ** use Binary search on the answer space **
         if (midN == 1) {
             return mid;
         }
