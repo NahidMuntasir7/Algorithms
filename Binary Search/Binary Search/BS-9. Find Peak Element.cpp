@@ -4,14 +4,14 @@
 // return any one peak 
 
 int findPeakElement(vector<int> &arr) {
-    int n = arr.size(); //Size of array
+    int n = arr.size(); //size of array
 
     // Edge cases
     if (n == 1) return 0; // only element
     if (arr[0] > arr[1]) return 0; // first element is a peak
     if (arr[n - 1] > arr[n - 2]) return n - 1; // last element is a peak
 
-    int low = 1, high = n - 2; // 1st last element eliminated ^
+    int low = 1, high = n - 2; // 1st and last element eliminated ^
     while (low <= high) {
         int mid = (low + high) / 2;
 
