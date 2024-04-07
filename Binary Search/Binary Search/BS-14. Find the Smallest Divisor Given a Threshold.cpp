@@ -21,15 +21,15 @@ int sumByD(vector<int> &arr, int div) {
     int sum = 0;  // Find the summation of division values
     for (int i = 0; i < n; i++) {
         sum += ceil((double)(arr[i]) / (double)(div)); // ** ceil value **
-    }
+    } 
     return sum;
 }
 
 int smallestDivisor(vector<int>& arr, int limit) {
     int n = arr.size();
-    if (n > limit) return -1; // edge case
+    if (n > limit) return -1; // edge case: for n = 3 er jonno max jekono divisor e 1 + 1 + 1 dibe.. limit = 2 hole never possible..
     int low = 1, high = *max_element(arr.begin(), arr.end()); // high is max element
-                                                        
+                                   // max soho er porer jekono valuer jonno 1 + 1 + 1 + .... dibe
     // Apply binary search
     while (low <= high) {
         int mid = (low + high) / 2;
