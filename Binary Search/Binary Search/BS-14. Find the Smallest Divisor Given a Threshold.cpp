@@ -28,8 +28,8 @@ int sumByD(vector<int> &arr, int div) {
 int smallestDivisor(vector<int>& arr, int limit) {
     int n = arr.size();
     if (n > limit) return -1; // edge case
-    int low = 1, high = *max_element(arr.begin(), arr.end());
-
+    int low = 1, high = *max_element(arr.begin(), arr.end()); // high is max element
+                                                        
     // Apply binary search
     while (low <= high) {
         int mid = (low + high) / 2;
