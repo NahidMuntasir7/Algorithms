@@ -40,7 +40,7 @@ int minimumRateToEatBananas(vector<int> v, int h) {
     while (low <= high) {
         int mid = (low + high) / 2;
         int totalH = calculateTotalHours(v, mid);
-        if (totalH <= h) {
+        if (totalH <= h) { // if mid is giving true <----
             high = mid - 1;
         }
         else {
