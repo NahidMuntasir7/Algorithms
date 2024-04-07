@@ -47,8 +47,8 @@ int minimumRateToEatBananas(vector<int> v, int h) {
             low = mid + 1;
         }
     }
-    return low; //
-}
+    return low; // when the loop breaks (high < low) : low will be in the position of last valid high
+}               // alternative: storing (ans = high) before high = mid - 1 (last valid high)
 
 int main(){
     vector<int> v = {7, 15, 6, 3};
