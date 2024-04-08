@@ -17,7 +17,6 @@
 // output: 
 // 3
 
-// ** max of min **
 
 #include <bits/stdc++.h>
 using namespace std;
