@@ -49,7 +49,7 @@ int aggressiveCows(vector<int> &stalls, int k) {
         }
         else high = mid - 1;
     }
-    return high;
+    return high; // last valid low (low carries the ans)
 }
 
 int main(){
