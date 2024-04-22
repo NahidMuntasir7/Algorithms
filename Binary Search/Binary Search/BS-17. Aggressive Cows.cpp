@@ -5,6 +5,7 @@
 // (min) max || (max) min
 // minimum distance between cows is max
 // its (min) max
+// (min distance between cows) is max
 
 // input: 
 // 1
