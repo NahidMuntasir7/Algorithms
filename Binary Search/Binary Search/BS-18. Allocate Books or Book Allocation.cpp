@@ -53,10 +53,10 @@ int findPages(vector<int>& arr, int n, int m) {
             low = mid + 1;
         }
         else {
-            high = mid - 1;
+            high = mid - 1; // <<<--------- (going towards to the max)
         }
     }
-    return low;
+    return low; // last valid high
 }
 
 int main() {
