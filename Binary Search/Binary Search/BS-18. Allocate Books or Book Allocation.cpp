@@ -10,7 +10,7 @@
 // You have to allocate the book to ‘m’ students such that 
 // the maximum number of pages assigned to a student is minimum.
 
-// ()
+// (max) min
 
 // If the allocation of books is not possible, return -1.
 
