@@ -56,7 +56,7 @@ int findPages(vector<int>& arr, int n, int m) {
     //book allocation impossible:
     if (m > n) return -1;
 
-    int low = *max_element(arr.begin(), arr.end());  // m = book and n = student
+    int low = *max_element(arr.begin(), arr.end());  // n = book and m = student
     int high = accumulate(arr.begin(), arr.end(), 0);
     while (low <= high) {
         int mid = (low + high) / 2;
