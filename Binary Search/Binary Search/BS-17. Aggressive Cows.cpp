@@ -2,9 +2,9 @@
 // His C (2 <= C <= N) cows don't like this barn layout and become aggressive towards each other once put into a stall. To prevent the cows from hurting each other, 
 // FJ wants to assign the cows to the stalls, such that the minimum distance between any two of them is as large as possible. What is the ** largest minimum distance ** ?
 
-// (min) max || (max) min
+// max of (min) || min of (max)
 // minimum distance between cows is max
-// its (min) max
+// its max of (min)
 // (min distance between cows) is max
 
 // input: 
