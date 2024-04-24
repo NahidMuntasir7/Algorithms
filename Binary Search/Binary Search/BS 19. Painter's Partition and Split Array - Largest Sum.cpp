@@ -11,7 +11,7 @@
 
 // ----------------------------------- min of (max) ------------------------------------
 // split the array in k non empty subarrays where maximum subarray sum is minimum
-// 
+// similar to book allocation
 
 
 // Largest Subarray Sum Minimized
