@@ -10,7 +10,7 @@
 // Output: 11
 
 // -------------------------------------------- min (max) ------------------------------------------
-// split the array in k non empty subarrays where maximum sum is minimized
+// split the array in k non empty subarrays where maximum subarray sum is minimum
 
 
 // Largest Subarray Sum Minimized
