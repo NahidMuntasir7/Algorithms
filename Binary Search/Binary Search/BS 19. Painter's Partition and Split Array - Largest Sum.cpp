@@ -9,7 +9,7 @@
 // Input: arr = [2, 1, 5, 6, 2, 3], k = 2
 // Output: 11
 
-// ----------------------------------- min (max) ------------------------------------
+// ----------------------------------- min of (max) ------------------------------------
 // split the array in k non empty subarrays where maximum subarray sum is minimum
 
 
