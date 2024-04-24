@@ -49,7 +49,7 @@ int findPages(vector<int>& arr, int n, int m) {
     while (low <= high) {
         int mid = (low + high) / 2;
         int students = countStudents(arr, mid);
-        if (students > m) {
+        if (students > m) {                  // page barle student kome
             low = mid + 1;
         }
         else {
