@@ -6,11 +6,12 @@ int LIS(int arr[], int i, int n, int prev){
     if (i == n) {
         return 0;
     }
-    int excl = LIS(arr, i + 1, n, prev);
+    
     int incl = 0;
-    if (arr[i] > prev) { //LDS (arr[i] < prev)
+    if (arr[i] > prev) { // LDS (arr[i] < prev)
         incl = 1 + LIS(arr, i + 1, n, arr[i]);
     }
+    int excl = LIS(arr, i + 1, n, prev);
     return max(incl, excl);
 }
 int main(){
