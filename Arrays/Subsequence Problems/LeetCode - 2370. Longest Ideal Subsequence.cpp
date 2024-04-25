@@ -16,7 +16,7 @@ public:
     }
 
     int longestIdealString(string s, int k) {
-        vector<vector<int>> dp(s.size() + 1, vector<int>(26, -1)); // // 27 because space for 26 alphabets and one more for '0'
+        vector<vector<int>> dp(s.size() + 1, vector<int>(27, -1)); // // 27 because space for 26 alphabets and one more for '0'
         return lis(0, 0, s, k, dp);  
     }
 };
