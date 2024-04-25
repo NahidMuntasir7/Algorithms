@@ -8,6 +8,7 @@
 // Let 'dist' be the maximum value of the distance between adjacent gas stations after adding 'k' new gas stations.
 // Find the minimum value of dist.
 
+
 // Example:
 // Input: ‘n' = 7 , ‘k’=6, ‘arr’ = {1,2,3,4,5,6,7}.
 
