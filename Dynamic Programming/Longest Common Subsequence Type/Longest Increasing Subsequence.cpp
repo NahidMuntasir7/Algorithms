@@ -11,6 +11,7 @@ int LIS(int arr[], int i, int n, int prev){
     if (arr[i] > prev) { // LDS (arr[i] < prev)
         incl = 1 + LIS(arr, i + 1, n, arr[i]);
     }
+    
     int excl = LIS(arr, i + 1, n, prev);
     return max(incl, excl);
 }
