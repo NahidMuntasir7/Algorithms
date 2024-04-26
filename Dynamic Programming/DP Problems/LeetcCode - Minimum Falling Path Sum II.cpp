@@ -4,8 +4,7 @@ public:
     int mini(int i, int j, vector<vector<int>> &grid){
 
         int n = grid.size();
-        if(j >= n) return INT_MAX;
-        if(i == n - 1) return grid[i][j];
+        if(i == n - 1) return grid[i][j]; // if(i == n) return 0 dile INT_MAX issue 
         if(dp[i][j] != -1) return dp[i][j];;
 
         int ans = INT_MAX;
