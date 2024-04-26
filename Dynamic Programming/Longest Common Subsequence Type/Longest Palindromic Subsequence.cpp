@@ -3,7 +3,7 @@ using namespace std;
 
 int findLongestPalindrome(string X, int i, int j){ // i -> start and j -> end 
     if (i > j) return 0;
-    if (i == j) return 1;
+    if (i == j) return 1; // 1 letter
 
     if (X[i] == X[j]){
         return findLongestPalindrome(X, i + 1, j - 1) + 2;
