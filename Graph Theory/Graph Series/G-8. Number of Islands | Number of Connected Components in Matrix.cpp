@@ -65,7 +65,7 @@ class Solution {
         if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || grid[i][j] != '1') {
             return;
         }
-        grid[i][j] = '0'; // mark as visited
+        grid[i][j] = '0'; // mark as visited: no vis array used*
       
         dfs(grid, i + 1, j); // down
         dfs(grid, i - 1, j); // up
