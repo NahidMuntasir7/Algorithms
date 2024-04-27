@@ -16,6 +16,8 @@ public:
     }
     int findCircleNum(vector<vector<int>>& isConnected){ 
         int n = isConnected.size();
+        
+        // matrix form to adj list
         vector<int> adj[n]; 
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < n; j++){
