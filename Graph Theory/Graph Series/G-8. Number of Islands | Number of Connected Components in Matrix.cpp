@@ -1,11 +1,14 @@
 // Problem Statement: Given a grid of size NxM (N is the number of rows and M is the number of columns in the grid) consisting of '0's (Water) and ‘1's(Land). 
 // Find the number of islands.
 
+// with BFS
+
 class Solution {
   private: 
-  void bfs(int row, int col, vector<vector<int>> &vis, vector<vector<char>>&grid) {
+  void bfs(int row, int col, vector<vector<int>> &vis, vector<vector<char>> &grid) {
       // mark it visited
       vis[row][col] = 1; 
+    
       queue<pair<int,int>> q;
       // push the node in queue
       q.push({row, col}); 
@@ -19,13 +22,12 @@ class Solution {
           q.pop(); 
           
           // traverse in the neighbours and mark them if its a land 
-          for(int delrow = -1; delrow<=1;delrow++) {
+          for(int delrow = -1; delrow <= 1; delrow++) {
               for(int delcol = -1; delcol <= 1; delcol++) {
                   int nrow = row + delrow; 
                   int ncol = col + delcol; 
                   // neighbour row and column is valid, and is an unvisited land
-                  if(nrow >= 0 && nrow < n && ncol >= 0 && ncol < m 
-                  && grid[nrow][ncol] == '1' && !vis[nrow][ncol]) {
+                  if(nrow >= 0 && nrow < n && ncol >= 0 && ncol < m && grid[nrow][ncol] == '1' && !vis[nrow][ncol]) {
                       vis[nrow][ncol] = 1; 
                       q.push({nrow, ncol}); 
                   }
@@ -53,3 +55,6 @@ class Solution {
         return cnt; 
     }
 };
+
+
+// with DFS
