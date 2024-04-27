@@ -1,6 +1,7 @@
 // Problem Statement: Given an undirected graph with V vertices. We say two vertices u and v belong to a single province 
 // if there is a path from u to v or v to u. Your task is to find the number of provinces.
 
+
 // Matrix to Adj list DFS
 class Solution {
 public: 
@@ -37,6 +38,7 @@ void dfs(int node, vector<int> &vis, vector<int> adj[]){
 };
 
 
+
 // Matrix DFS
 class Solution {
 public:
@@ -56,6 +58,54 @@ public:
             if (vis[i] == false) {
                 dfs(isConnected, i, vis);
                 ans++;
+            }
+        }
+        return ans;
+    }
+};
+
+
+// with DSU
+class DSU{
+private:
+    vector<int>Parent, Size;
+public :
+    DSU(int n){
+        Parent.resize(n);
+        Size.resize(n);
+        for(int i=0;i<n;i++){
+            Parent[i]=i;
+            Size[i]=1;
+        }
+    }
+    int Find(int x){
+        if(x == Parent[x]) return x;
+        return Parent[x] = Find(Parent[x]);
+    }
+    bool Union(int x,int y){
+        x = Find(x);
+        y = Find(y);
+        if(x == y) return false;
+        if(Size[x] < Size[y]){
+            swap(x, y);
+        }
+        Parent[y] = x;
+        Size[x] += Size[y];
+        return true;
+    }
+};
+class Solution {
+public:
+    int findCircleNum(vector<vector<int>> &isConnected) {
+        int n = isConnected.size();
+        DSU dsu(n);
+        int ans = n;
+        for(int i = 0; i < n; i++){
+            for(int j = i + 1; j < n; j++){
+                if(isConnected[i][j] && dsu.Find(i) != dsu.Find(j) ){
+                    ans -= 1;
+                    dsu.Union(i, j);
+                }
             }
         }
         return ans;
