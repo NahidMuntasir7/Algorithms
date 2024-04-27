@@ -1,43 +1,63 @@
 // Problem Statement: Given an undirected graph with V vertices. We say two vertices u and v belong to a single province 
 // if there is a path from u to v or v to u. Your task is to find the number of provinces.
 
+// Matrix to Adj list DFS
 class Solution {
-  private: 
-    // dfs traversal function 
-    void dfs(int node, vector<int> adjLs[], int vis[]) {
-        // mark the more as visited
-        vis[node] = 1; 
-        for(auto it: adjLs[node]) {
-            if(!vis[it]) {
-                dfs(it, adjLs, vis); 
+public: 
+void dfs(int node, vector<int> &vis, vector<int> adj[]){
+    vis[node] = 1; 
+    for(auto child: adj[node]){
+        if(!vis[child]) {
+            dfs(child, vis, adj);
+        }
+    }
+}
+    int findCircleNum(vector<vector<int>>& isConnected){ 
+        int n = isConnected.size();
+        vector<int> adj[n]; 
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++){
+                if(i != j && isConnected[i][j] == 1){ // self nodes are not considered
+                   adj[i].push_back(j); 
+                   adj[j].push_back(i);
+                }
+            }
+        } 
+        vector<int> vis(n, 0); 
+
+        int count = 0;
+        for(int i = 0; i < n; i++){
+            if(vis[i] == 0){
+               count++; 
+               dfs(i, vis, adj);
+            }
+        } 
+        return count;
+    }
+};
+
+
+// Matrix DFS
+class Solution {
+public:
+    void dfs(vector<vector<int>>& isConnected, int i, vector <bool> &vis) {
+        vis[i] = true;
+        for (int j = 0; j < isConnected.size(); j++) {
+            if (isConnected[i][j] == 1 && vis[j] == false) {
+                dfs(isConnected, j, vis);
             }
         }
     }
-  public:
-    int numProvinces(vector<vector<int>> adj, int V) {
-        vector<int> adjLs[V]; 
-        
-        // to change adjacency matrix to list 
-        for(int i = 0; i < V; i++) {
-            for(int j = 0; j < V; j++) {
-                // self nodes are not considered
-                if(adj[i][j] == 1 && i != j) {
-                    adjLs[i].push_back(j); 
-                    adjLs[j].push_back(i); 
-                }
+
+    int findCircleNum(vector<vector<int>>& isConnected) {
+        vector <bool> vis(isConnected.size(), false);
+        int ans = 0;
+        for (int i = 0; i < isConnected.size(); i++) {
+            if (vis[i] == false) {
+                dfs(isConnected, i, vis);
+                ans++;
             }
         }
-        int vis[V] = {0}; 
-        int cnt = 0; 
-        for(int i = 0; i < V; i++) {
-            // if the node is not visited
-            if(!vis[i]) {
-                // counter to count the number of provinces 
-               cnt++;
-               dfs(i, adjLs, vis); 
-            }
-        }
-        return cnt; 
-        
+        return ans;
     }
 };
