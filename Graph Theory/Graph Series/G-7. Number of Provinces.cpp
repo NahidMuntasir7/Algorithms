@@ -3,16 +3,17 @@
 
 
 // Matrix to Adj list DFS
+
 class Solution {
 public: 
-void dfs(int node, vector<int> &vis, vector<int> adj[]){
-    vis[node] = 1; 
-    for(auto child: adj[node]){
-        if(!vis[child]) {
-            dfs(child, vis, adj);
+    void dfs(int node, vector<int> &vis, vector<int> adj[]){
+        vis[node] = 1; 
+        for(auto child: adj[node]){
+            if(!vis[child]) {
+                dfs(child, vis, adj);
+            }
         }
     }
-}
     int findCircleNum(vector<vector<int>>& isConnected){ 
         int n = isConnected.size();
         vector<int> adj[n]; 
@@ -40,6 +41,7 @@ void dfs(int node, vector<int> &vis, vector<int> adj[]){
 
 
 // Matrix DFS
+
 class Solution {
 public:
     void dfs(vector<vector<int>>& isConnected, int i, vector <bool> &vis) {
@@ -66,6 +68,7 @@ public:
 
 
 // with DSU
+
 class DSU{
 private:
     vector<int>Parent, Size;
