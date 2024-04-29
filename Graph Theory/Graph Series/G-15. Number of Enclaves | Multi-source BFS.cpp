@@ -1,4 +1,4 @@
-// Problem Statement: You are given an N x M binary matrix grid, where 0 represents a sea cell and 1 represents a land cell. 
+ // Problem Statement: You are given an N x M binary matrix grid, where 0 represents a sea cell and 1 represents a land cell. 
 // A move consists of walking from one land cell to another adjacent (4-directionally) land cell or walking off the boundary of the grid. 
 // Find the number of land cells in the grid for which we cannot walk off the boundary of the grid in any number of moves.
 
@@ -37,7 +37,7 @@ class Solution {
                 int nrow = row + delrow[i];
                 int ncol = col + delcol[i]; 
                 // check for valid coordinates and for land cell
-                if(nrow >= 0 && nrow <n && ncol >= 0 && ncol < m 
+                if(nrow >= 0 && nrow < n && ncol >= 0 && ncol < m 
                 && vis[nrow][ncol] == 0 && grid[nrow][ncol] == 1) {
                     q.push({nrow, ncol});
                     vis[nrow][ncol] = 1; 
