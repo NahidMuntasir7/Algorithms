@@ -19,7 +19,7 @@ class Solution {
     bool isCycle(int V, vector<int> adj[]) {
        int vis[V] = {0}; 
        // for graph with connected components 
-       for(int i = 0;i<V;i++) {
+       for(int i = 0; i < V; i++) {
            if(!vis[i]) {
                if(dfs(i, -1, vis, adj) == true) return true; 
            }
