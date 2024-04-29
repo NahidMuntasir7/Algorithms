@@ -37,7 +37,7 @@ class Solution {
                 int nrow = row + delrow[i];
                 int ncol = col + delcol[i]; 
                 // check for valid coordinates and for land cell
-                if(nrow >=0 && nrow <n && ncol >=0 && ncol < m 
+                if(nrow >= 0 && nrow <n && ncol >= 0 && ncol < m 
                 && vis[nrow][ncol] == 0 && grid[nrow][ncol] == 1) {
                     q.push({nrow, ncol});
                     vis[nrow][ncol] = 1; 
