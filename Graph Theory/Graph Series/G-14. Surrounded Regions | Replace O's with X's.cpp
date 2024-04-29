@@ -25,7 +25,7 @@ public:
     vector<vector<char>> fill(int n, int m, vector<vector<char>> mat){
         int delrow[] = {-1, 0, +1, 0};
         int delcol[] = {0, 1, 0, -1}; 
-        vector<vector<int>> vis(n, vector<int> (m,0)); 
+        vector<vector<int>> vis(n, vector<int> (m, 0)); 
         // traverse first row and last row 
         for(int j = 0; j < m; j++) {
             // check for unvisited Os in the boundary rows
@@ -36,7 +36,7 @@ public:
             
             // last row 
             if(!vis[n - 1][j] && mat[n - 1][j] == 'O') {
-                dfs(n-1,j,vis,mat, delrow, delcol); 
+                dfs(n-1, j, vis, mat, delrow, delcol); 
             }
         }
         
