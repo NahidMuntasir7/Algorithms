@@ -9,7 +9,8 @@ class Solution {
         queue<pair<int,int>> q; 
         int n = grid.size(); 
         int m = grid[0].size(); 
-        int vis[n][m] = {0}; 
+        vector<vector<int>> vis(n, vector<int> (m, 0));
+     
         // traverse boundary elements
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
