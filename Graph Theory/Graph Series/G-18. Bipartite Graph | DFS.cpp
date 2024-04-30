@@ -1,37 +1,34 @@
 class Solution {
-private:
-	bool dfsCheck(int node, vector<int> adj[], int vis[], int pathVis[]) {
-		vis[node] = 1;
-		pathVis[node] = 1;
-
-		// traverse for adjacent nodes
-		for (auto it : adj[node]) {
-			// when the node is not visited
-			if (!vis[it]) {
-				if (dfsCheck(it, adj, vis, pathVis) == true)
-					return true;
-			}
-			// if the node has been previously visited
-			// but it has to be visited on the same path
-			else if (pathVis[it]) {
-				return true;
-			}
-		}
-
-		pathVis[node] = 0;
-		return false;
-	}
+private: 
+    bool dfs(int node, int col, int color[], vector<int> adj[]) {
+        color[node] = col; 
+        
+        // traverse adjacent nodes
+        for(auto it : adj[node]) {
+            // if uncoloured
+            if(color[it] == -1) {
+                if(dfs(it, !col, color, adj) == false) return false; 
+            }
+            // if previously coloured and have the same colour
+            else if(color[it] == col) {
+                return false; 
+            }
+        }
+        
+        return true; 
+    }
 public:
-	// Function to detect cycle in a directed graph.
-	bool isCyclic(int V, vector<int> adj[]) {
-		int vis[V] = {0};
-		int pathVis[V] = {0};
-
-		for (int i = 0; i < V; i++) {
-			if (!vis[i]) {
-				if (dfsCheck(i, adj, vis, pathVis) == true) return true;
-			}
-		}
-		return false;
+	bool isBipartite(int V, vector<int>adj[]){
+	    int color[V];
+	    for(int i = 0;i < V; i++) color[i] = -1; 
+	    
+	    // for connected components
+	    for(int i = 0; i < V; i++) {
+	        if(color[i] == -1) {
+	            if(dfs(i, 0, color, adj) == false) 
+	                return false; 
+	        }
+	    }
+	    return true; 
 	}
 };
