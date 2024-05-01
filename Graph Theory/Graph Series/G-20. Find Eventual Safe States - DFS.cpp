@@ -27,7 +27,7 @@ private:
 				return true;
 			}
 		}
-		check[node] = 1; // dfs call is over at a node
+		check[node] = 1; // when dfs call is over for a node
 		pathVis[node] = 0;
 		return false;
 	}
