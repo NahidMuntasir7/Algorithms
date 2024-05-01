@@ -6,9 +6,7 @@
 
 class Solution {
 private:
-	bool dfsCheck(int node, vector<int> adj[], int vis[],
- int pathVis[], 
-        int check[]) {
+	bool dfsCheck(int node, vector<int> adj[], int vis[], int pathVis[], int check[]) {
 		vis[node] = 1;
 		pathVis[node] = 1;
 		check[node] = 0;
