@@ -15,7 +15,7 @@ private:
 			// when the node is not visited
 			if (!vis[it]) {
 			if (dfsCheck(it, adj, vis, pathVis, check) == true) {
-					check[node] = 0; // not necessary: will be covered by check[node] = 0;
+					check[node] = 0; // not necessary: will be covered by 3rd line check[node] = 0;
 					return true;
 				}
 
@@ -23,7 +23,7 @@ private:
 			// if the node has been previously visited
 			// but it has to be visited on the same path
 			else if (pathVis[it]) {
-				check[node] = 0;  // not necessary: will be covered by check[node] = 0;
+				check[node] = 0;  // not necessary: will be covered by 3rd line check[node] = 0;
 				return true;
 			}
 		}
