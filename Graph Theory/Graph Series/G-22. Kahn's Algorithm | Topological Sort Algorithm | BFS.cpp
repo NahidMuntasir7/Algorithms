@@ -1,8 +1,7 @@
 class Solution {
 public:
 	//Function to return list containing vertices in Topological order.
-	vector<int> topoSort(int V, vector<int> adj[])
-	{
+	vector<int> topoSort(int V, vector<int> adj[]){
 		int indegree[V] = {0};
 		for (int i = 0; i < V; i++) {
 			for (auto it : adj[i]) {
