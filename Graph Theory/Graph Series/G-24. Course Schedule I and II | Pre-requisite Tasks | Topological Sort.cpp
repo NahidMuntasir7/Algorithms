@@ -37,7 +37,7 @@ public:
                 }
             }
         }
-        return ans.size() == n;
+        return ans.size() == n; // all node done
     }
 };
 
