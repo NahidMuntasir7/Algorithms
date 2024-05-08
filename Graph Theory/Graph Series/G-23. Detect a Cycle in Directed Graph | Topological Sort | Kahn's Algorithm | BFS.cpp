@@ -31,7 +31,7 @@ public:
 			}
 		}
 
-		if (cnt == V) return false;
-		return true;
+		if (cnt == V) return false; // toposort is possible.. so no cycle
+		return true; // cycle
 	}
 };
