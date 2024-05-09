@@ -4,7 +4,7 @@
 // You have to return an array containing all the safe nodes of the graph. The answer should be sorted in ascending order.
 
 
-
+// reverse the edges and start topo from the safe nodes
 class Solution {
 public:
 	vector<int> eventualSafeNodes(int V, vector<int> adj[]) {
