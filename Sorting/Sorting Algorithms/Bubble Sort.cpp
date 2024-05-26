@@ -1,3 +1,5 @@
+// Time Complexity: O(N2)
+// Auxiliary Space: O(1)
 // normal
 
 void bubbleSort(int arr[], int n){
