@@ -4,6 +4,8 @@
 // Note: What is a DAG ( Directed Acyclic Graph)?
 // A Directed Graph (containing one-sided edges) having no cycles is said to be a Directed Acyclic Graph.
 
+// Approach: ** First toposort then relaxation **
+
 #include<bits/stdc++.h>
 
 using namespace std;
