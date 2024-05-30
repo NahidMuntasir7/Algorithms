@@ -51,7 +51,7 @@ class Solution {
         dist[i] = 1e9;
       }
 
-      dist[0] = 0;
+      dist[0] = 0; // source deya thakle  dist[src] = 0;
       while (!st.empty()) {
         int node = st.top();
         st.pop();
