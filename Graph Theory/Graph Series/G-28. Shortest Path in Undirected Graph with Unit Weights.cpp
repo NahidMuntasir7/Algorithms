@@ -1,6 +1,8 @@
 // Given an Undirected Graph having unit weight, find the shortest path from the source to all other nodes in this graph. 
 // In this problem statement, we have assumed the source vertex to be ‘0’. If a vertex is unreachable from the source node, then return -1 for that vertex.
 
+// 1 weight Dijkstra 
+
 #include<bits/stdc++.h>
 using namespace std;
 
