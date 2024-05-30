@@ -9,4 +9,12 @@
 
 // Note:  If there’s no possible way to transform the sequence from startWord to targetWord return 0.
 
-
+// Input:
+// wordList = {"des","der","dfr","dgt","dfs"}
+// startWord = "der", targetWord = "dfs"
+// Output:
+// 3
+// Explanation: 
+// The length of the smallest transformation sequence from "der" to 
+// "dfs" is 3 i.e. "der" -> (replace ‘e’ by ‘f’) -> "dfr" -> (replace ‘r’ by ‘s’)  -> "dfs". 
+// So, it takes 3 different strings for us to reach the targetWord. Each of these strings are present in the wordList.
