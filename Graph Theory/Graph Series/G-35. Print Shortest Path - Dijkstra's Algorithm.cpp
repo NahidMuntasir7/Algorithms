@@ -1,3 +1,7 @@
+// You are given a weighted undirected graph having n+1 vertices numbered from 0 to n and m edges describing there are edges 
+// between a to b with some weight, find the shortest path between the vertex 1 and the vertex n, and if the path does not 
+// exist then return a list consisting of only -1.
+
 #include <bits/stdc++.h>
 using namespace std;
 
