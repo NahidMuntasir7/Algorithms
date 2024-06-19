@@ -14,9 +14,7 @@ class Solution{
 public:
     int shortestPath(vector<vector<int>> &grid, pair<int, int> source, pair<int, int> destination){
         // Edge Case: if the source is only the destination.
-        if (source.first == destination.first &&
-            source.second == destination.second)
-            return 0;
+        if (source.first == destination.first && source.second == destination.second) return 0;
 
         // Create a queue for storing cells with their distances from source
         // in the form {dist,{cell coordinates pair}}.
