@@ -12,8 +12,7 @@ using namespace std;
 
 class Solution {
 public:
-	int findCity(int n, int m, vector<vector<int>>& edges,
-	             int distanceThreshold) {
+	int findCity(int n, int m, vector<vector<int>>& edges, int distanceThreshold) {
 		vector<vector<int>> dist(n, vector<int> (n, INT_MAX));
 		for (auto it : edges) {
 			dist[it[0]][it[1]] = it[2];
