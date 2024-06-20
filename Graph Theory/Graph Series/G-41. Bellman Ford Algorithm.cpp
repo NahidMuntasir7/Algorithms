@@ -2,7 +2,7 @@
 
 // Note: If the Graph contains a negative cycle then return an array consisting of only -1.
 
-
+// works with directed graph: if undirected given make it directed.
 #include <bits/stdc++.h>
 using namespace std;
 
