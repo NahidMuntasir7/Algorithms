@@ -2,7 +2,11 @@
 
 // Note: If the Graph contains a negative cycle then return an array consisting of only -1.
 
-// works with directed graph: if undirected given make it directed.
+// Bellman Ford's Algorithm works when there is negative weight edge, it also detects the negative weight cycle. 
+// Dijkstra's Algorithm doesn't work when there is negative weight edge.
+
+// works with directed graph: if undirected graph is given make it directed.
+
 #include <bits/stdc++.h>
 using namespace std;
 
