@@ -51,12 +51,10 @@ void unionBySize(int u, int v) {
         }
     }
 };
-class Solution
-{
+class Solution{
 public:
     //Function to find sum of weights of edges of the Minimum Spanning Tree.
-    int spanningTree(int V, vector<vector<int>> adj[])
-    {
+    int spanningTree(int V, vector<vector<int>> adj[]){
         // 1 - 2 wt = 5
         /// 1 - > (2, 5)
         // 2 -> (1, 5)
