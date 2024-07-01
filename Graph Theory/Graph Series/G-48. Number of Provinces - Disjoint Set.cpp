@@ -33,7 +33,7 @@ public:
         DSU dsu(n);
         int ans = n;
         for(int i = 0; i < n; i++){
-            for(int j = i + 1; j < n; j++){
+            for(int j = i + 1; j < n; j++){   // for(int j = 0; j < n; j++) also okk
                 if(isConnected[i][j] && dsu.Find(i) != dsu.Find(j) ){
                     ans -= 1;
                     dsu.Union(i, j);
