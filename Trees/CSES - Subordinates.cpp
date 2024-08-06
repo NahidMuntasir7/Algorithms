@@ -12,16 +12,12 @@ vector<int> tree[N];
 void dfs(int vertex, int par, vector<int> &ans){
  
    int subords = 0;
- 
    for(int child : tree[vertex]){
- 
-      if(child == par) continue;
- 
-      dfs(child, vertex, ans);
-      subords += (1 + ans[child]);
+       if(child == par) continue;
+       dfs(child, vertex, ans);
+       subords += (1 + ans[child]);
    }
- 
-   ans[vertex] = subords;
+    ans[vertex] = subords;
 } 
  
 int main(){
