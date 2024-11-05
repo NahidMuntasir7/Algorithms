@@ -24,6 +24,23 @@ void dfs(int vertex, int d){
         dfs(child, dist[vertex] + 1);
     }
 }
+// chatgpt another
+void dfs(int vertex, int parent) {
+    dep[vertex] = dep[parent] + 1; // Set depth based on parent
+    vis[vertex] = true;
+
+    if (dep[vertex] > mx) {
+        mx = dep[vertex];
+        second_node = vertex;
+    }
+
+    for (int child : g[vertex]) {
+        if (child != parent && !vis[child]) {
+            dfs(child, vertex); // Pass current node as the parent
+        }
+    }
+}
+
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
