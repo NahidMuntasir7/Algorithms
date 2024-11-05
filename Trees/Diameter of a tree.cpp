@@ -1,62 +1,71 @@
-tree diameter - the length of the longest path between any two nodes in a tree
+// tree diameter - the length of the longest path between any two nodes in a tree
 
 
 // CSES-Tree Diameter
-#include<bits/stdc++.h>
+// chatgpt ///////
+
+void dfs(int u, int par) {
+    dep[u] = dep[par] + 1; // Set depth based on parent
+    vis[u] = true;
+
+    if (dep[u] > mx) {
+        mx = dep[u];
+        second_node = u;
+    }
+
+    for (int v : g[u]) {
+        if (v != par && !vis[v]) {
+            dfs(v, u); // Pass current node as the parent
+        }
+    }
+}
+
+/////////////////
+
+#include <bits/stdc++.h>
 using namespace std;
-const int N = 1e7 + 10 ;
- 
+
+const int N = 1e7 + 10;
 vector<int> g[N];
 bool vis[N];
 int dist[N];
 int mx = INT_MIN, second_node;
 
-void dfs(int vertex, int d){
-     vis[vertex] = true;
-     dist[vertex] = d;
+void dfs(int u, int d) {
+    vis[u] = true;
+    dist[u] = d;
     
-    if(dist[vertex] > mx){
-        mx = dist[vertex];
-        second_node = vertex;
+    if (dist[u] > mx) {
+        mx = dist[u];
+        second_node = u;
     }
-    for(int child : g[vertex]){
-        if(vis[child]) continue;
-        dfs(child, dist[vertex] + 1);
-    }
-}
-// chatgpt another ///////
-void dfs(int vertex, int parent) {
-    dep[vertex] = dep[parent] + 1; // Set depth based on parent
-    vis[vertex] = true;
-
-    if (dep[vertex] > mx) {
-        mx = dep[vertex];
-        second_node = vertex;
-    }
-
-    for (int child : g[vertex]) {
-        if (child != parent && !vis[child]) {
-            dfs(child, vertex); // Pass current node as the parent
-        }
+    
+    for (int v : g[u]) {
+        if (vis[v]) continue;
+        dfs(v, d + 1);
     }
 }
-/////////////////
+
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
+    
     int n;
     cin >> n;
-    for(int i = 1; i < n; i++){
-        int x, y;
-        cin >> x >> y;
-        g[x].push_back(y);
-        g[y].push_back(x);
+    
+    for (int i = 1; i < n; i++) {
+        int u, v; // Changed from x, y to u, v
+        cin >> u >> v;
+        g[u].push_back(v);
+        g[v].push_back(u);
     }
-    dfs(1, 0);
+    
+    dfs(1, 0); // First DFS to find the farthest node
     mx = -1;
-    for(int i = 0; i < N; i++){
+    for(int i = 0; i < N; i++){  // Reset visited array
         vis[i] = false;
-    }
-    dfs(second_node, 0);
+    } 
+    
+    dfs(second_node, 0); // Second DFS from the farthest node
     cout << mx << endl;
- }
+}
