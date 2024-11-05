@@ -24,7 +24,7 @@ void dfs(int vertex, int d){
         dfs(child, dist[vertex] + 1);
     }
 }
-// chatgpt another
+// chatgpt another ///////
 void dfs(int vertex, int parent) {
     dep[vertex] = dep[parent] + 1; // Set depth based on parent
     vis[vertex] = true;
@@ -40,7 +40,7 @@ void dfs(int vertex, int parent) {
         }
     }
 }
-
+/////////////////
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
