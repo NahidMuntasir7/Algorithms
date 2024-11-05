@@ -19,7 +19,18 @@ void dfs(int vertex, int par, vector<int> &ans){
    }
     ans[vertex] = subords;
 } 
- 
+// another one ///////
+void dfs(int node, int parent) {
+    subtree_size[node] = 1; 
+
+    for (int neighbor : adj[node]) {
+        if (neighbor != parent) {
+            dfs(neighbor, node); 
+            subtree_size[node] += subtree_size[neighbor];
+        }
+    }
+}
+///////////////////
 int main(){
  
    int n; cin >> n;
