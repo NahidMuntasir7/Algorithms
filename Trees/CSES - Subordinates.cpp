@@ -19,18 +19,7 @@ void dfs(int vertex, int par, vector<int> &ans){
    }
     ans[vertex] = subords;
 } 
-// another one ///////
-void dfs(int node, int parent) {
-    subtree_size[node] = 1; 
 
-    for (int neighbor : adj[node]) {
-        if (neighbor != parent) {
-            dfs(neighbor, node); 
-            subtree_size[node] += subtree_size[neighbor];
-        }
-    }
-}
-///////////////////
 int main(){
  
    int n; cin >> n;
@@ -52,7 +41,40 @@ int main(){
 }
 
 
-// ChatGPT
+// ChatGPT ********************************* easy one
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> g[100005];
+int sub[100005];
+
+void dfs(int u, int p) {
+    sub[u] = 1; // Count the node itself
+    for (int v : g[u]) {
+        if (v != p) {
+            dfs(v, u);
+            sub[u] += sub[v]; // Add the size of each subtree
+        }
+    }
+}
+
+int main() {
+    int n;
+    cin >> n;
+    for (int i = 1; i < n; i++) {
+        int u, v;
+        cin >> u >> v;
+        g[u].push_back(v);
+        g[v].push_back(u);
+    }
+    dfs(1, -1); // Start from node 1 with no parent
+    for (int i = 1; i <= n; i++) {
+        cout << sub[i] - 1 << " "; // Exclude the node itself from subordinates
+    }
+    return 0;
+}
+// *******************************************************************
 
 const int MAXN = 100005; 
 
