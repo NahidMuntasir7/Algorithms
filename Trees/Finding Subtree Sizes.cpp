@@ -30,6 +30,6 @@ int main() {
     dfs(root, -1); 
 
     for (int i = 1; i <= n; ++i) {
-        cout << "Subtree size of node " << i << " is " << subtree_size[i] << endl;
-    }
+        cout << "Subtree size of node " << i << " is " << subtree_size[i] << endl;   // includes the node so no -1
+    }  
 }
