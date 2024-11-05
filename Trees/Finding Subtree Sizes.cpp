@@ -1,16 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
 
-const int MAXN = 100005;
+vector<int> g[100005];
+int sub[100005];
 
-vector<int> adj[MAXN];  
-int subtree_size[MAXN]; 
-
-void dfs(int node, int parent) {
-    subtree_size[node] = 1; 
-
-    for (int neighbor : adj[node]) {
-        if (neighbor != parent) {
-            dfs(neighbor, node); 
-            subtree_size[node] += subtree_size[neighbor];
+void dfs(int u, int p) {
+    sub[u] = 1; // Include the node itself
+    for (int v : g[u]) {
+        if (v != p) {
+            dfs(v, u);
+            sub[u] += sub[v]; // Sum sizes of all subtrees
         }
     }
 }
@@ -18,18 +17,15 @@ void dfs(int node, int parent) {
 int main() {
     int n;
     cin >> n;
-
-    for (int i = 0; i < n - 1; ++i) {
+    for (int i = 1; i < n; i++) {
         int u, v;
         cin >> u >> v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
+        g[u].push_back(v);
+        g[v].push_back(u);
     }
-
-    int root = 1; 
-    dfs(root, -1); 
-
-    for (int i = 1; i <= n; ++i) {
-        cout << "Subtree size of node " << i << " is " << subtree_size[i] << endl;   // includes the node so no -1
-    }  
+    dfs(1, -1); // Start DFS from node 1
+    for (int i = 1; i <= n; i++) {
+        cout << sub[i] << " ";
+    }
+    return 0;
 }
