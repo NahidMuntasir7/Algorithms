@@ -1,3 +1,6 @@
+// the salesman must visit all the cities in the graph exactly once before returning to the starting city. This requirement ensures that each city (or node in the graph) 
+// is visited one time, making it a Hamiltonian cycle that minimizes the total travel distance or cost.
+
 #include <bits/stdc++.h>
 using namespace std;
 int travllingSalesmanProblem(int graph[][4], int s){
