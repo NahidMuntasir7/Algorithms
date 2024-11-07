@@ -17,6 +17,45 @@ int main(){
     cout << "The length of the LCS is " << LCSLength(X, Y, X.length(), Y.length());
 }
 
+
+// gpt
+
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int lcs(string s1, string s2) {
+    int m = s1.size();
+    int n = s2.size();
+    
+    // DP table to store lengths of LCS
+    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+    
+    // Fill the DP table iteratively
+    for (int i = 1; i <= m; i++) {
+        for (int j = 1; j <= n; j++) {
+            if (s1[i - 1] == s2[j - 1]) {
+                dp[i][j] = dp[i - 1][j - 1] + 1;  // If characters match
+            } else {
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);  // If characters don't match
+            }
+        }
+    }
+    
+    return dp[m][n];  // The result is in dp[m][n]
+}
+
+int main() {
+    string s1 = "AGGTAB";
+    string s2 = "GXTXAYB";
+    
+    cout << "Length of Longest Common Subsequence: " << lcs(s1, s2) << endl;
+    return 0;
+}
+
+
 // 2
 #include<bits/stdc++.h>
 using namespace std;
