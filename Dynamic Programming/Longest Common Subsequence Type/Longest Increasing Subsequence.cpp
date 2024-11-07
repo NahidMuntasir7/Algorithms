@@ -29,34 +29,30 @@ int main(){
 #include <algorithm>
 using namespace std;
 
-int lcs(string s1, string s2) {
-    int m = s1.size();
-    int n = s2.size();
+int lengthOfLIS(vector<int>& nums) {
+    if (nums.empty()) return 0;
     
-    // DP table to store lengths of LCS
-    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+    int n = nums.size();
+    vector<int> dp(n, 1);  // dp[i] will store the length of the longest increasing subsequence ending at index i
     
-    // Fill the DP table iteratively
-    for (int i = 1; i <= m; i++) {
-        for (int j = 1; j <= n; j++) {
-            if (s1[i - 1] == s2[j - 1]) {
-                dp[i][j] = dp[i - 1][j - 1] + 1;  // If characters match
-            } else {
-                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);  // If characters don't match
+    // Build the dp table
+    for (int i = 1; i < n; i++) {
+        for (int j = 0; j < i; j++) {
+            if (nums[i] > nums[j]) {  // If nums[i] is greater than nums[j], update dp[i]
+                dp[i] = max(dp[i], dp[j] + 1);
             }
         }
     }
     
-    return dp[m][n];  // The result is in dp[m][n]
+    return *max_element(dp.begin(), dp.end());  // The longest LIS is the maximum value in dp array
 }
 
 int main() {
-    string s1 = "AGGTAB";
-    string s2 = "GXTXAYB";
-    
-    cout << "Length of Longest Common Subsequence: " << lcs(s1, s2) << endl;
+    vector<int> nums = {10, 9, 2, 5, 3, 7, 101, 18};
+    cout << "Length of Longest Increasing Subsequence: " << lengthOfLIS(nums) << endl;
     return 0;
 }
+
 
 
 
