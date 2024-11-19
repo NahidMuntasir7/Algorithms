@@ -18,8 +18,8 @@ public:
         unordered_map<int, long long> m;
         
         for(int i = 0; i < n ; i++){
-            int diff = i - nums[i]; // piche ache naki
-            ans -= m[diff]; // thakle minus pair gula
+            int diff = i - nums[i]; // checking if there is a previos one that is able to make pair
+            ans -= m[diff]; // if there minus them
             m[diff]++; // new one count e add
         }
         return ans;
