@@ -1,3 +1,5 @@
+// First Version if you need the maximum subarray sum in all cases, **including arrays with all negative numbers**.
+
 #include<bits/stdc++.h>
 using namespace std;
     
@@ -28,12 +30,13 @@ int main(){
 
 
 
-// Kadane's Algorithm
+// Kadane's Algorithm: this one handles negative values but sets sum to 0 when all negative
+
     ll maxi = INT_MIN, sum = 0;
  
     for(ll i = 0; i < n; i++){
         sum = sum + arr[i];   
         maxi = max(maxi, sum);  
-        if(sum < 0) sum = 0;
+        if(sum < 0) sum = 0; // Reset sum to 0 when it goes negative
     }
 
