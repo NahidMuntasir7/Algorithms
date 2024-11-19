@@ -3,18 +3,18 @@ using namespace std;
 
 int lenOfLongSubarr(vector<int>& arr, int k) {
     unordered_map<int, int> mp;
-    int res = 0;
+    int len = 0;
     int prefixSum = 0;
 
     for (int i = 0; i < arr.size(); ++i) {
         prefixSum += arr[i];
 
         if (prefixSum == k) { // na dile mp[0] = -1 deya lagto
-            res = i + 1;
+            len = i + 1;
         }
 
         else if (mp.find(prefixSum - k) != mp.end()) {
-            res = max(res, i - mp[prefixSum - k]);  // length = r - l hobe 5 - 2 = 3 length (3, 4, 5)
+            len = max(len, i - mp[prefixSum - k]);  // length = r - l hobe 5 - 2 = 3 length (3, 4, 5)
         }
 
         if (mp.find(prefixSum) == mp.end()) { // keeping the first occurence / sum to make it max
