@@ -18,9 +18,9 @@ public:
         unordered_map<int, long long> m;
         
         for(int i = 0; i < n ; i++){
-            int diff = i - nums[i];
-            ans -= m[diff];
-            m[diff]++;
+            int diff = i - nums[i]; // piche ache naki
+            ans -= m[diff]; // thakle minus pair gula
+            m[diff]++; // new one count e add
         }
         return ans;
     }
