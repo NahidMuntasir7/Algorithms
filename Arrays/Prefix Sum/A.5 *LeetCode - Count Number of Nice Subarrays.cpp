@@ -51,7 +51,8 @@ public:
         return ans;
     }
     int numberOfSubarrays(vector<int>& nums, int k) {
-      return subArray(nums, k) - subArray(nums, k - 1);
+      return subArray(nums, k) - subArray(nums, k - 1);  //  subArray(nums, k) which counts subarrays with at most k odd numbers.
+                                                         //  subArray(nums, k - 1) which counts subarrays with at most k-1 odd numbers.
     }
 };
 
