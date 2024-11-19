@@ -27,7 +27,7 @@ public:
         
         for (int i = 0; i < nums.size(); i++) {
             sum += nums[i];
-            if (sum == target) len = i + 1;
+            if (sum == target) len = i + 1; // na dile mp[0] = -1 deya lagto
             else if (mp.find(sum - target) != mp.end()) {
                 len = max(len, i - mp[sum - target]);
             }
