@@ -10,7 +10,7 @@
 // total sum of element is 10 , and we need to reduce x to 0, so that means leftover subarray sum would be total - x
 // So try to find a largest subarray where this holds true and if not return -1
 
-So. Find out the largest subarray with sum total - x.....
+So. Find out the largest subarray with sum total - x..... (A.4 one)
 
 
 class Solution {
