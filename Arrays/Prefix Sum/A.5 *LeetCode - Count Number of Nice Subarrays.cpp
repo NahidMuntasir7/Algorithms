@@ -46,7 +46,7 @@ public:
                 }
                 start++;
             }
-            ans += end - start + 1;  // Add all valid subarrays ending at 'end' (all valid that ends with end and  at most k ta tahkte parbe... 0 is possible)
+            ans += end - start + 1;  // Add all valid subarrays ending at 'end' (all valid that ***ends with end*** and  at most k ta tahkte parbe... 0 is possible)
             end++;
         }
         return ans;
@@ -79,4 +79,4 @@ Explanation: The 4 subarrays are bolded and underlined below:
 
 exactly same one............................. so there is a pattern in this type of number of subarray where you can't decide... so do map method or atmost method
 
-
+**## end - start + 1 => hobe when you can take every subarray ending with end ##**
