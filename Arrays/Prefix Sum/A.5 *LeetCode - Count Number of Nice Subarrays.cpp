@@ -2,7 +2,8 @@
 // Return the number of nice sub-arrays.
 
 
-// ** similar to find subarray with sum = x ** here sum = k
+// ** similar to find subarray with sum = x ** here sum of odd numbers = k
+
 class Solution {
 public:
     int numberOfSubarrays(vector<int>& nums, int k) {
