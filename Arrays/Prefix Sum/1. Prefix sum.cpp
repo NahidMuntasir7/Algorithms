@@ -9,7 +9,7 @@ int main(){
     cin.tie(0);
     
     int n; cin >> n;
-    int arr[n + 1], pre[n + 1] = {0};
+    int arr[n + 1], pre[n + 1] = {0}; // 
 
     for(int i = 1; i <= n; i++){
         cin >> arr[i];
@@ -34,7 +34,8 @@ int main() {
 
     for (int i = 0; i < n; i++) cin >> arr[i]; // Input array
 
-    prefixSum[0] = arr[0];
+    prefixSum[0] = arr[0]; //
+    
     for (int i = 1; i < n; i++) 
         prefixSum[i] = prefixSum[i - 1] + arr[i];
 
