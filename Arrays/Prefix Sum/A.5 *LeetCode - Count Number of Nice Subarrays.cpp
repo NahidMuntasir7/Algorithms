@@ -77,6 +77,6 @@ Explanation: The 4 subarrays are bolded and underlined below:
 [1,0,1,0,1]
 [1,0,1,0,1]
 
-exactly same one............................. so there is a pattern in this type of number of subarray where you can't decide... so do map method or atmost
+exactly same one............................. so there is a pattern in this type of number of subarray where you can't decide... so do map method or atmost method
 
 
