@@ -46,7 +46,7 @@ public:
                 }
                 start++;
             }
-            ans += end - start + 1;  // Add all valid subarrays ending at 'end' (all valid as at most k ta tahkte parbe... 0 is possible)
+            ans += end - start + 1;  // Add all valid subarrays ending at 'end' (all valid that ends with end and  at most k ta tahkte parbe... 0 is possible)
             end++;
         }
         return ans;
