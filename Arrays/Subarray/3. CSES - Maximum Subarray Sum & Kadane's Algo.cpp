@@ -19,13 +19,13 @@ int main(){
     for(ll i = 0; i < n; i++){
         cin >> arr[i];
     }
-    ll best = INT_MIN, sum = 0;
+    ll maxi = INT_MIN, sum = 0;
  
     for(ll i = 0; i < n; i++){
         sum = max(sum + arr[i], arr[i]);   //... -1 -5 -2 ... in this case we will take -2 ...
-        best = max(best, sum);  // taking max of all changing sum ...
+        maxi = max(maxi, sum);  // taking max of all changing sum ...
     }
-    cout << best << endl;
+    cout << maxi << endl;
 }
 
 
