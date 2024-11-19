@@ -2,27 +2,27 @@
 using namespace std;
 
 int lenOfLongSubarr(vector<int>& arr, int k) {
+    
     unordered_map<int, int> mp;
-    int len = 0;
-    int prefixSum = 0;
+    int len = INT_MIN, sum = 0;
 
     for (int i = 0; i < arr.size(); ++i) {
-        prefixSum += arr[i];
+        sum += arr[i];
 
-        if (prefixSum == k) { // na dile mp[0] = -1 deya lagto
+        if (sum == k) { // na dile mp[0] = -1 deya lagto
             len = i + 1;
         }
 
-        else if (mp.find(prefixSum - k) != mp.end()) {
-            len = max(len, i - mp[prefixSum - k]);  // length = r - l hobe 5 - 2 = 3 length (3, 4, 5)
+        else if (mp.find(sum - k) != mp.end()) {
+            len = max(len, i - mp[sum - k]);  // length = r - l hobe 5 - 2 = 3 length (3, 4, 5)
         }
 
-        if (mp.find(prefixSum) == mp.end()) { // keeping the first occurence / sum to make it max
-            mp[prefixSum] = i;
+        if (mp.find(sum) == mp.end()) { // keeping the first occurence / sum to make it max
+            mp[sum] = i;
         }
     }
 
-    return res;
+    return len;
 }
 
 int main() {
