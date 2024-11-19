@@ -46,11 +46,15 @@ public:
                 }
                 start++;
             }
-            ans += end - start + 1;
+            ans += end - start + 1;  // Add all valid subarrays ending at 'end' (all valid as at most k ta tahkte parbe... 0 is possible)
             end++;
         }
         return ans;
     }
+
+//  The idea is to count the number of subarrays with exactly k odd numbers by finding
+// the difference between subarrays with at most k  odd numbers and those with at most k - 1 odd numbers.
+
     int numberOfSubarrays(vector<int>& nums, int k) {
       return subArray(nums, k) - subArray(nums, k - 1);  //  subArray(nums, k) which counts subarrays with at most k odd numbers.
                                                          //  subArray(nums, k - 1) which counts subarrays with at most k-1 odd numbers.
