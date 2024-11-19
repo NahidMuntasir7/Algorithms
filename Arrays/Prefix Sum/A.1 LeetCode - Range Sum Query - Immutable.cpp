@@ -1,3 +1,5 @@
+// 0 based array and range given... do prefix sum 
+
 class NumArray {
     vector<int> pre; // here...
 
