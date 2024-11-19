@@ -18,7 +18,6 @@ int main(){
     for(int i = 0; i < n; i++){
         sum += arr[i];
         cnt += seen[sum - x];  // l <- x -> r so, r - l = x or, l = r - x.  current r er jonno suitable l ache kina check..
-     
         seen[sum]++; //
     }
     cout << cnt << endl;
