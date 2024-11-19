@@ -1,14 +1,14 @@
-You are given an integer array nums and an integer x. In one operation, you can either remove the leftmost or the rightmost element from the array nums and subtract its value from x. Note that this modifies the array for future operations.
-Return the minimum number of operations to reduce x to exactly 0 if it is possible, otherwise, return -1.
+// You are given an integer array nums and an integer x. In one operation, you can either remove the leftmost or the rightmost element from the array nums and subtract its value from x. Note that this modifies the array for future operations.
+// Return the minimum number of operations to reduce x to exactly 0 if it is possible, otherwise, return -1.
 
-This question ask for removal from left or right, that means , all other leftover element would be a **subarray**.
-We have to minimum operation if leftover element subarray would be as large as possiible.
+// This question ask for removal from left or right, that means , all other leftover element would be a **subarray**.
+// We have to minimum operation if leftover element subarray would be as large as possiible.
 
 
-Lets see with an example to understand better.
-[1,1,4,2,3], x = 5
-total sum of element is 10 , and we need to reduce x to 0, so that means leftover subarray sum would be total - x
-So try to find a largest subarray where this holds true and if not return -1
+// Lets see with an example to understand better.
+// [1,1,4,2,3], x = 5
+// total sum of element is 10 , and we need to reduce x to 0, so that means leftover subarray sum would be total - x
+// So try to find a largest subarray where this holds true and if not return -1
 
 So. Find out the largest subarray with sum total - x.....
 
