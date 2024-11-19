@@ -12,7 +12,9 @@ int main(){
     long long sum = 0, cnt = 0;
  
     map<long long, int> seen;
-    seen[0]++;
+ 
+    seen[0]++; // seen[0] = 1
+ 
     for(int i = 0; i < n; i++){
         sum += arr[i];
         cnt += seen[sum - x];  // l <- x -> r so, r - l = x or, l = r - x.  current r er jonno suitable l ache kina check..
