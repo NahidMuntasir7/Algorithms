@@ -67,8 +67,6 @@ public:
 
 A subarray is a contiguous part of the array.
 
- 
-
 Example 1:
 
 Input: nums = [1,0,1,0,1], goal = 2
