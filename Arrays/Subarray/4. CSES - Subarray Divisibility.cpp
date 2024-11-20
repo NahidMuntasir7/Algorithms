@@ -14,7 +14,7 @@ int main(){
  
     seen[0]++;
     for(int i = 0; i < n; i++){
-        sum += val[i] % n;
+        sum += val[i] % n;  //  sum = ((sum + nums[i]) % k + k) % k; 
         sum = (sum + n) % n; // for negative.. for ex: (2 + 7) % 7 = 2 and (-2 + 7) % 7 = 5
         cnt += seen[sum];
         seen[sum]++;
