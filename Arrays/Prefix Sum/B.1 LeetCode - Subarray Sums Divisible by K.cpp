@@ -21,6 +21,8 @@
 
 
 // see CSES - Subarray divisibility at subarray file
+
+
 class Solution {
 public:
     int subarraysDivByK(vector<int>& nums, int k) {
@@ -43,3 +45,15 @@ public:
 //   count += mp[sum];
 // }
 
+long long sum = 0, cnt = 0;
+    map<long long, int> seen;
+ 
+    seen[0]++;
+    for(int i = 0; i < n; i++){
+        sum += val[i] % n;
+        sum = (sum + n) % n; // for negative.. for ex: (2 + 7) % 7 = 2 and (-2 + 7) % 7 = 5
+        cnt += seen[sum];
+        seen[sum]++;
+    }
+    cout << cnt << endl;
+}
