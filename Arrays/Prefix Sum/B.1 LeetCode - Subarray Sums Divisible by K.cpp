@@ -20,7 +20,7 @@
 
 
 
-// CSES - Subarray divisibility 
+// see CSES - Subarray divisibility at subarray file
 class Solution {
 public:
     int subarraysDivByK(vector<int>& nums, int k) {
