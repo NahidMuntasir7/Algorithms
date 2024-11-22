@@ -37,6 +37,6 @@ int main(){
     for(ll i = 0; i < n; i++){
         sum = sum + arr[i];   
         maxi = max(maxi, sum);  
-        if(sum < 0) sum = 0; // Reset sum to 0 when it goes negative
+        if(sum < 0) sum = 0; 
     }
 
