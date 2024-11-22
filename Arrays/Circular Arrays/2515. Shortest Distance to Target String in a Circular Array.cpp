@@ -21,8 +21,8 @@ public:
         if(v.size() == 0) return -1;
         else{
             for(int i = 0; i < v.size(); i++){
-                ans = min((n - startIndex) + (1 + v[i]), (startIndex + 1) + (n - v[i]));
-                ans = min(ans, abs(v[i] - startIndex));
+                ans = min((n - startIndex) + (1 + v[i]), (startIndex + 1) + (n - v[i])); // <-- distance  and --> distance
+                ans = min(ans, abs(v[i] - startIndex));  // direct distance
                 mini = min(mini, ans);
             }
         }
