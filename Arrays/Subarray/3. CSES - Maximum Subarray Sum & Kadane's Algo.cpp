@@ -35,8 +35,8 @@ int main(){
     ll maxi = INT_MIN, sum = 0;
  
     for(ll i = 0; i < n; i++){
-        sum = sum + arr[i];   
-        maxi = max(maxi, sum);  
-        if(sum < 0) sum = 0; 
+        sum = sum + arr[i];      // sum
+        maxi = max(maxi, sum);   // maximum
+        if(sum < 0) sum = 0;     // savior
     }
 
