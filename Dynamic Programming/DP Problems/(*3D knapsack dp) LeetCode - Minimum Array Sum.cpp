@@ -1,3 +1,5 @@
+// easy**
+
 // You are given an integer array nums and three integers k, op1, and op2.
 
 // You can perform the following operations on nums:
