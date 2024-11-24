@@ -22,9 +22,10 @@ public:
         if(i >= nums.size()) return 0;
         if(dp[i][op1][op2] != -1) return dp[i][op1][op2];
 
-        int ans = solve(nums, i + 1, k, op1, op2) + nums[i]; // not pick
+        // not pick -----------------------------
+        int ans = solve(nums, i + 1, k, op1, op2) + nums[i];
 
-        // pick
+        // pick ---------------------------------
         if(op1 > 0) ans = min(ans, solve(nums, i + 1, k, op1 - 1, op2) + ((nums[i] + 1) / 2)); // div with ceil
         if(op2 > 0 and nums[i] >= k) ans = min(ans, solve(nums, i + 1, k, op1, op2 - 1) + (nums[i] - k)); // minus
 
