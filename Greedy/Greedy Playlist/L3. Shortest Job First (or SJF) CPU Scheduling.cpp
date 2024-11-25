@@ -27,7 +27,6 @@ float shortestJobFirst(vector<int> jobs) {
     int totalTime = 0; 
     int n = jobs.size(); 
 
-
     for(int i = 0; i < n; ++i) 
         waitTime += totalTime; 
         totalTime += jobs[i]; 
