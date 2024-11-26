@@ -12,3 +12,4 @@
 // Explanation: The minimum number of jumps to reach the last index is 2. Jump 1 step from index 0 to 1, then 3 steps to the last index.
 
 
+// same as before... asking the minimum jump
