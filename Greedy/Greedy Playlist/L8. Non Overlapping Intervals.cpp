@@ -10,7 +10,7 @@
 
 class Solution {
 public:
-    static bool cmp(const vector<int>& a, const vector<int>& b) {
+    static bool cmp(const vector<int>& a, const vector<int>& b) {  // static is imp
         return a[1] < b[1]; // Sort by end time
     }
 
