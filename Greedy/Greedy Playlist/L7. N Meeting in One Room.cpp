@@ -15,7 +15,7 @@ void maxMeetings(int start[], int end[], int N) {
 
     // Create a vector of {end time, {start time, index}}
     for (int i = 0; i < N; i++) {
-        meetings.push_back({end[i], {start[i], i + 1}});
+        meetings.push_back({end[i], {start[i], i + 1}});  // STLLLLLLLLL
     }
 
     // Sort meetings by end time (primary) and index (secondary)
@@ -27,7 +27,7 @@ void maxMeetings(int start[], int end[], int N) {
     // Iterate over the meetings to find the maximum set
     for (auto &meeting : meetings) {
         if (meeting.second.first > lastEndTime) {
-            selectedMeetings.push_back(meeting.second.second);
+            selectedMeetings.push_back(meeting.second.second);   // STLLLLLLLL
             lastEndTime = meeting.first;
         }
     }
