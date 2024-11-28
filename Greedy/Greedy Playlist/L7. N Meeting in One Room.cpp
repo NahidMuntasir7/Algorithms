@@ -10,7 +10,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Function to find the maximum number of meetings
 void maxMeetings(int start[], int end[], int N) {
     vector<pair<int, pair<int, int>>> meetings;
 
@@ -32,7 +31,6 @@ void maxMeetings(int start[], int end[], int N) {
             lastEndTime = meeting.first;
         }
     }
-
     // Print the order of selected meetings
     for (int i : selectedMeetings) {
         cout << i << " ";
@@ -47,8 +45,6 @@ int main() {
     int end[] = {2, 4, 5, 7, 9, 9};
 
     maxMeetings(start, end, N);
-
-    return 0;
 }
 
 
