@@ -9,3 +9,28 @@
 // Input: intervals = [[1,3],[6,9]], newInterval = [2,5]
 // Output: [[1,5],[6,9]]
 
+class Solution {
+public:
+    vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
+        intervals.push_back(newInterval);
+        sort(intervals.begin(), intervals.end());
+
+        vector<vector<int>> res;
+        res.push_back(intervals[0]);
+
+        for (int i = 1; i < intervals.size(); ++i) {
+            if (res.back()[1] >= intervals[i][0]) {
+                res.back()[1] = max(res.back()[1], intervals[i][1]);
+            } else {
+                res.push_back(intervals[i]);
+            }
+        }
+
+        return res;        
+    }
+};
+
+// (1, 3), (2, 5), (6, 9)
+// (1, 5) (6, 9)
+
+// if 1st last >= 2nd first so overlap.... fix it by updating the 1st last with 2nd last
