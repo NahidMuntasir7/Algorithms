@@ -11,3 +11,8 @@
 // Explanation: There are three trains during the time 9:40 to 12:00. So we need a minimum of 3 platforms.
 
 
+
+// more than one plartform needed when it is intersecting
+// so need to find out maximum number of intersections
+
+
