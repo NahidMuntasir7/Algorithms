@@ -24,8 +24,8 @@ int findPlatform(int arr[], int dep[], int n){
     sort(arr, arr + n);
     sort(dep, dep + n);
 
-    int plat_needed = 1, result = 1;
-    int i = 1, j = 0;
+    int plat_needed = 0, result = 0;
+    int i = 0, j = 0;
 
     while (i < n && j < n) {
         if (arr[i] <= dep[j]) {
