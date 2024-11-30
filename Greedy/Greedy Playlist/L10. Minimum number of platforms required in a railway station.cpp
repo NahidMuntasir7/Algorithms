@@ -16,37 +16,35 @@
 // so need to find out maximum number of intersections
 
 
-#include <bits/stdc++.h>
+
+#include<bits/stdc++.h>
 using namespace std;
-
-int findPlatform(int arr[], int dep[], int n){
-
+ 
+int countPlatforms(int n, int arr[], int dep[]){
     sort(arr, arr + n);
     sort(dep, dep + n);
-
-    int plat_needed = 0, result = 0;
-    int i = 0, j = 0;
-
-    while (i < n && j < n) {
-        if (arr[i] <= dep[j]) {
-            plat_needed++;
+ 
+    int ans = 1;
+    int count = 1;
+    int i = 1, j = 0;
+    while(i < n && j < n){
+        if(arr[i] <= dep[j]) {
+            count++;   //one more platform needed
             i++;
         }
-        else if (arr[i] > dep[j]) {
-            plat_needed--;
+        else{
+            count--; //one platform can be reduced
             j++;
         }
-        result = max(result, plat_needed);
+        ans = max(ans, count); //updating the value with the current maximum
     }
-
-    return result;
-}
-
-int main(){
-
-    int arr[] = { 100, 300, 500 };
-    int dep[] = { 900, 400, 600 };
-    int n = sizeof(arr) / sizeof(arr[0]);
-    cout << findPlatform(arr, dep, n);
-    return 0;
-}
+    return ans;
+ }
+ 
+ int main(){
+     
+    int arr[] = {900, 945, 955, 1100, 1500, 1800};
+    int dep[] = {920, 1200, 1130, 1150, 1900, 2000};
+    int n = sizeof(dep) / sizeof(dep[0]);
+    cout << "Minimum number of Platforms required " << countPlatforms(n, arr, dep) << endl;
+ }
