@@ -38,7 +38,7 @@ class Solution {
          } else {
             int remain = W - curWeight;
             finalvalue += (arr[i].value / (double) arr[i].weight) * (double) remain;
-            break;
+            break; // breakkkkk
          }
       }
 
