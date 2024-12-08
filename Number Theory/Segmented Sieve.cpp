@@ -1,3 +1,22 @@
+void segmentedSieve(int L, int R) {
+    int limit = sqrt(R) + 1;
+    vector<int> primes = sieve(limit);
+    vector<bool> isPrime(R - L + 1, true);
+    for (int prime : primes) {
+        int start = max(prime * prime, (L + prime - 1) / prime * prime);
+        for (int j = start; j <= R; j += prime) {
+            isPrime[j - L] = false;
+        }
+    }
+    for (int i = 0; i <= R - L; ++i) {
+        if (isPrime[i]) {
+            cout << (L + i) << " ";
+        }
+    }
+}
+
+// another
+
 #include<bits/stdc++.h>
 using namespace std;
 
