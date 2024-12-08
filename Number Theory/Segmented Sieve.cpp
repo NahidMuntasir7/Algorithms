@@ -1,3 +1,4 @@
+//  Primes in a Range [L, R]
 void segmentedSieve(int L, int R) {
     int limit = sqrt(R) + 1;
     vector<int> primes = sieve(limit);
