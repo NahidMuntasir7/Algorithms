@@ -16,6 +16,27 @@ void segmentedSieve(int L, int R) {
     }
 }
 
+
+// Count Primes in a Range [L, R]
+
+int countPrimesInRange(int L, int R) {
+    int limit = sqrt(R) + 1;
+    vector<int> primes = sieve(limit);
+    vector<bool> isPrime(R - L + 1, true);
+    for (int prime : primes) {
+        int start = max(prime * prime, (L + prime - 1) / prime * prime);
+        for (int j = start; j <= R; j += prime) {
+            isPrime[j - L] = false;
+        }
+    }
+    int count = 0;
+    for (int i = 0; i <= R - L; ++i) {
+        if (isPrime[i]) count++;
+    }
+    return count;
+}
+
+
 // another
 
 #include<bits/stdc++.h>
