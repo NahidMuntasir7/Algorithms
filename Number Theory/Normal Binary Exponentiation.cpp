@@ -27,8 +27,13 @@ int main(){
     cin >> a >> b >> M;
 
     cout << BinExp(a, b, M) <<endl;
-    cout << inverse(a, M) << endl; // BinExp(a, M-2, M);
+    cout << inverse(a, M) << endl; // BinExp(a, M-2, M); // a ^ (-1) % m
 
 }
+
+for a ^ 5 and a ^ -5  
+
+ll a5 = power(a, 5, m);
+ll inverse_a5 = power(a5, m - 2, m);  // (a ^ 5) ^ -1 % m = a ^ (-5) % m 
 
 
