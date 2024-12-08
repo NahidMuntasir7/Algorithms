@@ -16,6 +16,8 @@ a / b mod m = (a * b^(-1)) mod m
 
 // division a / b mod m
 
+// Division: a / b mod M = a * b^(-1) mod M  ;)
+
 #include<bits/stdc++.h>
 using namespace std;
 
