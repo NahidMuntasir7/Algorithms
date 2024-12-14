@@ -4,34 +4,32 @@
 class Solution {
 public:
     long long continuousSubarrays(vector<int>& nums) {
+        // Map to maintain sorted frequency map of current window
+        map<int, int> freq;
+        int left = 0, right = 0;
         int n = nums.size();
-        long long ans = 0;
-        deque<int> maxQ;    // monotonic decreasing queue - {5 , 3 , 2, 1}
-        deque<int> minQ;    // monotonic increasing queue - {1, 2, 5}
-        int l=0, r=0;       //sliding window parameters
-        while(r<n){
-            // maintain monotonicity of maxQ and minQ including rth element
-            while(!maxQ.empty() && nums[r] > maxQ.back())
-                maxQ.pop_back();
-            while(!minQ.empty() && nums[r] < minQ.back())
-                minQ.pop_back();
+        long long count = 0;  // Total count of valid subarrays
 
-            // insert rth element in queues
-            maxQ.push_back(nums[r]);
-            minQ.push_back(nums[r]);
+        while (right < n) {
+            // Add current element to frequency map
+            freq[nums[right]]++;
 
-            // shrink left side based on given condition after including rth element
-            while(maxQ.front() - minQ.front() > 2){
-                // update maxQ, minQ and left boundary 
-                if(nums[l] == maxQ.front())     // if lth element is max of this window
-                    maxQ.pop_front();
-                if(nums[l] == minQ.front())     // if lth element is min of this window
-                    minQ.pop_front();
-                l++;
+            // While window violates the condition |nums[i] - nums[j]| ≤ 2
+            // Shrink window from left
+            while (freq.rbegin()->first - freq.begin()->first > 2) {
+                // Remove leftmost element from frequency map
+                freq[nums[left]]--;
+                if (freq[nums[left]] == 0) {
+                    freq.erase(nums[left]);
+                }
+                left++;
             }
-            ans += r - l + 1;                   // update ans
-            r++;                                // expand right side
+
+            // Add count of all valid subarrays ending at right
+            count += right - left + 1;
+            right++;
         }
-        return ans;
+
+        return count;
     }
 };
