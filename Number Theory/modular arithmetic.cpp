@@ -47,6 +47,11 @@ int main() {
     long long a, b, M;
     cin >> a >> b >> M;
 
+    // For safe handling of negative a or b, you may want to normalize them:
+
+    a = (a % M + M) % M;
+    b = (b % M + M) % M;
+    
     // Compute b's modular inverse mod M
     long long b_inv = inverse(b, M);
 
