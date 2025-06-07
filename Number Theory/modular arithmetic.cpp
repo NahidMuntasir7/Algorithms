@@ -65,3 +65,54 @@ int main() {
 
 
 
+
+// here M is non prime - Modular Inverse using Extended Euclidean Algorithm (for non-prime M)
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Extended Euclidean Algorithm
+long long extendedGCD(long long a, long long b, long long &x, long long &y) {
+    if (b == 0) {
+        x = 1; y = 0;
+        return a;
+    }
+    long long x1, y1;
+    long long g = extendedGCD(b, a % b, x1, y1);
+    x = y1;
+    y = x1 - (a / b) * y1;
+    return g;
+}
+
+// Modular inverse using extended GCD
+long long modInverse(long long b, long long M) {
+    long long x, y;
+    long long g = extendedGCD(b, M, x, y);
+    if (g != 1) return -1; // No modular inverse if not coprime
+    return (x % M + M) % M; // Make sure it's positive
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    long long a, b, M;
+    cin >> a >> b >> M;
+
+    a = (a % M + M) % M;
+    b = (b % M + M) % M;
+
+    long long b_inv = modInverse(b, M);
+    if (b_inv == -1) {
+        cout << "Modular inverse does not exist (b and M are not coprime)\n";
+    } else {
+        long long result = (a * b_inv) % M;
+        cout << "a / b mod M = " << result << '\n';
+    }
+
+    return 0;
+}
+
+
+
