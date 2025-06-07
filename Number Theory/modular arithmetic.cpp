@@ -18,6 +18,9 @@ a / b mod m = (a * b^(-1)) mod m
 
 // Division: a / b mod M = a * b^(-1) mod M  ;)
 
+// here M is prime — so Fermat's Little Theorem applies.
+// here b and M are coprime (i.e., gcd(b, M) = 1) — otherwise the inverse doesn’t exist.
+
 #include<bits/stdc++.h>
 using namespace std;
 
